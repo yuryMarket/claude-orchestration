@@ -1,0 +1,101 @@
+# NACH — Nudge AI Companion for Humans
+
+NACH — проект для автоматизации инцидент-менеджмента SRE-команды. Включает AI-агента для расследования алертов и инфраструктуру деплоя.
+
+## Структура проекта
+
+```
+nudge/                              # Корень проекта NACH
+├── thd-holmes/                     # AI-агент (Python, Poetry)
+│   ├── holmes/                     # Основной пакет
+│   │   ├── main.py                 # CLI (Typer): ask, investigate, generate
+│   │   ├── config.py               # Config (Pydantic) — YAML/env/CLI
+│   │   ├── core/                   # Ядро: LLM-оркестратор, инструменты, расследования
+│   │   │   ├── tool_calling_llm.py # LLM loop с вызовами инструментов
+│   │   │   ├── tools.py            # Абстракции Tool/Toolset
+│   │   │   ├── investigation.py    # Логика расследования
+│   │   │   └── conversations.py    # Управление диалогами
+│   │   ├── plugins/                # Плагинная архитектура
+│   │   │   ├── destinations/slack/ # Slack интеграция (алерты, кнопки расследования)
+│   │   │   ├── sources/            # Источники алертов: prometheus, jira, github, opsgenie, pagerduty
+│   │   │   ├── toolsets/           # Диагностические инструменты для LLM
+│   │   │   │   ├── grafana/        # Loki, Tempo, Prometheus, dashboards
+│   │   │   │   ├── mcp/            # MCP серверы
+│   │   │   │   ├── github/         # GitHub/Argus rules
+│   │   │   │   └── *.yaml          # YAML-инструменты (kubernetes, helm, confluence)
+│   │   │   ├── prompts/            # Jinja2 шаблоны промптов
+│   │   │   └── runbooks/           # Рамнбуки для известных алертов
+│   │   └── utils/                  # Утилиты
+│   ├── alembic/                    # Миграции БД
+│   ├── docker-compose.yaml         # PostgreSQL, MCP серверы (Grafana, K8s, GitHub)
+│   ├── pyproject.toml              # Poetry: Python 3.12
+│   └── .env.nudge.sample           # Шаблон переменных окружения
+│
+├── pro-project-deployments/        # CDK8s деплоймент-конфиги (TypeScript, Nx, Yarn 4)
+│   ├── apps/                       # Приложения по командам (pro-project, pro-sre, ...)
+│   ├── base/                       # Базовые CDK8s конструкты
+│   ├── argus/                      # Argus правила
+│   ├── manifests/                  # Сгенерированные K8s манифесты
+│   └── Makefile                    # synth, spinnaker, argus, new-app
+│
+├── send-test-alert.sh              # Отправка тестового алерта (localhost)
+├── send-test-alert-np.sh           # Отправка тестового алерта (np-pro-project)
+├── test-alert.json                 # Пример алерта Alertmanager
+└── server.log                      # Лог сервера
+```
+
+## thd-holmes (AI-агент)
+
+### Стек
+- Python 3.12, Poetry
+- LiteLLM (default: `vertex_ai/gemini-2.5-flash`)
+- FastAPI + Uvicorn, Slack-bolt, Typer CLI
+- PostgreSQL 16 (SQLAlchemy + Alembic)
+- MCP интеграция (Kubernetes, Grafana, GitHub)
+
+### Команды
+```bash
+cd thd-holmes
+poetry install --no-root
+source .env.nudge
+poetry run holmes ask "what pods are unhealthy?"
+poetry run pytest
+docker compose up -d       # postgres + MCP серверы
+poetry run alembic upgrade head
+poetry run ruff check .
+```
+
+### Переменные окружения
+Ключевые (полный список в `.env.nudge.sample`):
+- `MODEL` — модель LLM (default: `vertex_ai/gemini-2.5-flash`)
+- `ALLOWED_TOOLSETS` — разрешённые тулсеты (comma-separated)
+- `GRAFANA_TOKEN`, `GRAFANA_URL` — доступ к Grafana
+- `SLACK_TOKEN`, `SLACK_APP_TOKEN`, `SLACK_CHANNEL` — Slack
+- `PG_*` — PostgreSQL
+
+### Ключевые паттерны
+- **Toolsets** — расширения через YAML или Python-классы (наследуют `Toolset`/`Tool`)
+- **Prompts** — Jinja2 шаблоны в `plugins/prompts/`, выбираются через `SYSTEM_PROMPT`
+- **Runbooks** — инструкции расследования в `plugins/runbooks/`
+- **Config** приоритет: CLI > env vars > config file (`~/.holmes/config.yaml`)
+
+## pro-project-deployments (K8s деплоймент)
+
+### Стек
+- TypeScript, CDK8s, Nx monorepo, Projen
+- Yarn 4, Node.js >= 22.14
+- Spinnaker для CD, Argus для правил
+
+### Команды
+```bash
+cd pro-project-deployments
+make synth team=pro-project           # генерация K8s манифестов
+make spinnaker team=pro-project       # генерация Spinnaker конфигов
+make argus team=pro-project           # генерация Argus правил
+make new-app team=<t> app=<a> project=<p> cluster=<c> namespace=<n>
+```
+
+## Важно
+- `.env.nudge` и `secret` содержат секреты — никогда не коммитить
+- `server.log` — большой файл (~18MB), не коммитить
+- Сертификаты в `thd-holmes/main.py` должны обрабатываться до любых импортов
