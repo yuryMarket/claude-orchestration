@@ -18,7 +18,11 @@
     "double-esc-code-restore": 2,
     "continue": 2,
     "shift-tab": 2,
-    "image-paste": 2
+    "image-paste": 2,
+    "desktop-app": 2,
+    "web-app": 2,
+    "mobile-app": 2,
+    "guest-passes": 2
   },
   "promptQueueUseCount": 1,
   "cachedGrowthBookFeatures": {
@@ -123,7 +127,10 @@
     "tengu_marble_whisper2": true,
     "tengu_hawthorn_steeple": false,
     "tengu_chair_sermon": false,
-    "tengu_collage_kaleidoscope": true
+    "tengu_collage_kaleidoscope": true,
+    "tengu_plan_mode_interview_phase": false,
+    "tengu_plum_vx3": true,
+    "tengu_disable_streaming_to_non_streaming_fallback": false
   },
   "firstStartTime": "2026-03-12T12:08:24.461Z",
   "opusProMigrationComplete": true,
@@ -138,7 +145,7 @@
   "groveConfigCache": {
     "a6ca26f1-c0d0-487b-848f-8e0f44c43acc": {
       "grove_enabled": true,
-      "timestamp": 1773482946543
+      "timestamp": 1773570498092
     }
   },
   "passesEligibilityCache": {
@@ -151,7 +158,7 @@
       },
       "referrer_reward": null,
       "remaining_passes": 3,
-      "timestamp": 1773482947235
+      "timestamp": 1773570498487
     }
   },
   "oauthAccount": {
@@ -247,11 +254,28 @@
       "hasTrustDialogAccepted": true,
       "projectOnboardingSeenCount": 1,
       "hasClaudeMdExternalIncludesApproved": false,
-      "hasClaudeMdExternalIncludesWarningShown": false
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "hasCompletedProjectOnboarding": true
     }
   },
   "cachedExtraUsageDisabledReason": "org_level_disabled",
   "officialMarketplaceAutoInstallAttempted": true,
   "officialMarketplaceAutoInstalled": true,
-  "autoUpdatesProtectedForNative": true
+  "autoUpdatesProtectedForNative": true,
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "type": "stdio"
+    }
+  },
+  "skillUsage": {
+    "claude-api": {
+      "usageCount": 1,
+      "lastUsedAt": 1773569596752
+    }
+  }
 }
