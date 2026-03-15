@@ -1,17 +1,63 @@
 # CLAUDE.md
 
-## User Preferences
+## Профиль пользователя
 
-<!-- Add your preferences here -->
+Специалист: SRE / DevOps / Platform Engineering / MLOps.
+Также: Python-разработчик, Node.js/TypeScript-разработчик.
 
-## Code Style
+## AIDD Workflow
 
-<!-- Add code style conventions here -->
+AI-Driven Development: структурированный 8-этапный workflow с quality gates.
+Полное описание: @~/.claude/workflow.md
 
-## Tools & Workflow
+### Протокол работы с тикетами
 
-<!-- Add preferred tools and workflow notes here -->
+1. Проверить `docs/.active_ticket` на наличие текущего тикета
+2. Если есть — прочитать PRD (`docs/prd/<ticket>.prd.md`), план, таск-лист
+3. Перед правками кода: показать diff, дождаться подтверждения пользователя, обновить таск-лист
+4. Если тикета нет — работать в обычном режиме без ограничений AIDD
 
-## Project Conventions
+### Доступные Skills (этапы AIDD)
 
-<!-- Add project-specific conventions here -->
+| Этап | Skill | Назначение |
+|------|-------|------------|
+| 1 | `/idea [ticket] [title]` | Создать/обновить PRD |
+| 2 | `/research [ticket]` | Исследование и анализ |
+| 3 | `/plan [ticket]` | Архитектура и план |
+| 4 | `/tasks [ticket]` | Декомпозиция задач |
+| 5 | `/implement [ticket]` | Реализация (по одной задаче) |
+| 6 | `/review [ticket]` | Код-ревью |
+| 7 | `/qa [ticket]` | QA и тестирование |
+| 8 | `/docs-update [ticket]` | Обновление документации |
+| - | `/validate [ticket]` | Проверка quality gates |
+| - | `/feature-development [ticket]` | Оркестратор: статус и следующий шаг |
+
+## Стиль кода
+
+@~/.claude/conventions.md
+
+## Инструменты и Workflow
+
+### Выбор субагентов
+- Когда пользователь просит "изучить", "исследовать", "проанализировать" информацию — использовать `deep-researcher` агента, а не только тематически подходящего агента.
+- Приоритизировать **намерение** пользователя (исследование vs быстрый ответ), а не тему вопроса.
+- При исследовательских задачах — запускать `deep-researcher` параллельно с тематическим агентом (например, `claude-code-guide`).
+
+### Субагенты для AIDD
+
+| Субагент | Когда использовать |
+|----------|-------------------|
+| `subagent-creator` | Создание новых AGENT.md файлов |
+| `deep-researcher` | Исследование перед принятием решений по реализации |
+| `claude-code-guide` | Уточнение возможностей/формата Claude Code |
+
+### Общие правила
+- Library-first: искать готовую библиотеку перед написанием >20 строк кода
+- Conventional commits: `type(scope): описание`
+- Всегда запускать тесты после изменений в коде
+- Никогда не пропускать quality gates
+
+## Язык
+
+- Все файлы в `~/.claude/` (rules, skills, agents, hooks, документация) создаются на **русском языке**
+- Исключения: код, команды, технические термины без устоявшегося перевода

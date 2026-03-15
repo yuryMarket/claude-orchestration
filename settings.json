@@ -1,7 +1,38 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Read(~/.claude/**)",
+      "Edit(~/.claude/**)",
+      "Write(~/.claude/**)",
+      "Read(/Users/yury_shubianok/.claude/**)",
+      "Edit(/Users/yury_shubianok/.claude/**)",
+      "Write(/Users/yury_shubianok/.claude/**)",
+      "Bash(cat > ~/.claude/**)",
+      "Bash(cat > /Users/yury_shubianok/.claude/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/yury_shubianok/.claude/hooks/gate-workflow.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/yury_shubianok/.claude/hooks/session-start.sh"
+          }
+        ]
+      }
     ]
   }
 }

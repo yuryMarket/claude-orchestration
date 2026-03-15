@@ -130,7 +130,13 @@
     "tengu_collage_kaleidoscope": true,
     "tengu_plan_mode_interview_phase": false,
     "tengu_plum_vx3": true,
-    "tengu_disable_streaming_to_non_streaming_fallback": false
+    "tengu_disable_streaming_to_non_streaming_fallback": false,
+    "tengu_amber_prism": false,
+    "tengu_copper_wren": false,
+    "tengu_sm_compact": false,
+    "tengu_compact_cache_prefix": true,
+    "tengu_lean_cast": false,
+    "tengu_compact_streaming_retry": false
   },
   "firstStartTime": "2026-03-12T12:08:24.461Z",
   "opusProMigrationComplete": true,
