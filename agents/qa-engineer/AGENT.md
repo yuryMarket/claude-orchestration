@@ -107,4 +107,3 @@ Date: YYYY-MM-DD
 2. Summary: passed/failed/skipped
 3. Критические проблемы (если есть)
 4. Вердикт: RELEASE_READY или NEEDS_FIX
-5. Рекомендацию: `/docs-update <ticket>` если всё ок или `/implement <ticket>` для исправлений

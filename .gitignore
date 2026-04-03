@@ -206,11 +206,17 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Claude Code local data
+# Claude Code local/runtime data
+/agent-memory/
 /backups/
 /cache/
 /file-history/
+/ide/
 /projects/
+/research/
 /session-env/
+/sessions/
 /shell-snapshots/
-/mcp-needs-auth-cache.json
+/telemetry/
+history.jsonl
+mcp-needs-auth-cache.json

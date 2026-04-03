@@ -100,4 +100,4 @@ permissionMode: plan
 2. Количество находок по severity
 3. Полный отчёт
 4. Вердикт: REVIEW_OK (нет blocking) или NEEDS_FIX (есть blocking)
-5. Рекомендацию: `/implement <ticket>` для исправлений или `/qa <ticket>` если всё ок
+5. Если NEEDS_FIX — список BLOCKING-находок с file:line для автофикса
