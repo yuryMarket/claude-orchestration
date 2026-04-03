@@ -71,12 +71,11 @@ permissionMode: plan
 | RELEASE_READY | PASS/FAIL | ... |
 | DOCS_UPDATED | PASS/FAIL | ... |
 
-Next step: `/command <ticket>`
 ```
 
 ## Communication Protocol
 
 Верни:
 1. Таблицу всех 8 gates с pass/fail
-2. Первый непройденный gate
-3. Рекомендуемую команду для следующего шага
+2. Первый непройденный gate (если есть)
+3. Общий вердикт: ALL_PASSED или BLOCKED (с указанием какой gate)

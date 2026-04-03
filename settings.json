@@ -5,11 +5,11 @@
       "Read(~/.claude/**)",
       "Edit(~/.claude/**)",
       "Write(~/.claude/**)",
-      "Read(/Users/yury_shubianok/.claude/**)",
-      "Edit(/Users/yury_shubianok/.claude/**)",
-      "Write(/Users/yury_shubianok/.claude/**)",
-      "Bash(cat > ~/.claude/**)",
-      "Bash(cat > /Users/yury_shubianok/.claude/**)"
+      "Read(//Users/yury_shubianok/.claude/**)",
+      "Edit(//Users/yury_shubianok/.claude/**)",
+      "Write(//Users/yury_shubianok/.claude/**)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs"
     ]
   },
   "hooks": {
