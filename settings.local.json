@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:habr.com)",
-      "WebFetch(domain:docs.anthropic.com)"
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:claudefa.st)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
