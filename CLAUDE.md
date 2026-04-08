@@ -54,6 +54,20 @@
 |----------|-------------------|
 | `subagent-creator` | Создание новых AGENT.md файлов |
 | `claude-code-guide` | Уточнение возможностей/формата Claude Code |
+| `skills-manager` | Создание и обновление скиллов (slash commands) в ~/.claude/skills/ |
+| `hooks-manager` | Создание и обновление хуков Claude Code в ~/.claude/hooks/ |
+| `quick-lookup` | Быстрая проверка фактов через Context7 (документация библиотек) и Confluence |
+
+### Обязательное использование специализированных агентов
+
+При создании или изменении конфигурационных файлов `~/.claude/` — **всегда** использовать соответствующего специализированного агента, никогда не писать файлы напрямую:
+
+| Что создаётся/изменяется | Агент |
+|---|---|
+| `~/.claude/agents/*/AGENT.md` | `subagent-creator` |
+| `~/.claude/rules/*.md` | `rules-manager` |
+| `~/.claude/skills/*/SKILL.md` | `skills-manager` |
+| `~/.claude/hooks/*.sh` + регистрация в settings.json | `hooks-manager` |
 
 ### Общие правила
 - Library-first: искать готовую библиотеку перед написанием >20 строк кода

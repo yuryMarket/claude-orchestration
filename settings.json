@@ -30,6 +30,22 @@
           {
             "type": "command",
             "command": "/Users/yury_shubianok/.claude/hooks/session-start.sh"
+          },
+          {
+            "type": "command",
+            "command": "/Users/yury_shubianok/.claude/hooks/session-start-pending.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/yury_shubianok/.claude/hooks/detect-correction.sh",
+            "timeout": 60,
+            "statusMessage": "Анализирую паттерны коррекций..."
           }
         ]
       }

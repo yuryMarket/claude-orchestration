@@ -1,7 +1,7 @@
 ---
 name: deep-researcher
-description: "Используй этого агента для сбора, проверки и резюмирования информации по любой теме перед принятием решений о реализации. Обрабатывает техническое исследование, расследование проблем, оценку библиотек/API, поиск лучших практик и анализ документации. Собирает факты из множества источников (веб, документация Context7, кодовая база) и создаёт структурированный исследовательский отчёт — без принятия решений и без модификации кода."
-tools: Read, Write, Grep, Glob, WebFetch, WebSearch
+description: "Используй этого агента для сбора, проверки и резюмирования информации по любой теме перед принятием решений о реализации. Обрабатывает техническое исследование, расследование проблем, оценку библиотек/API, поиск лучших практик и анализ документации. Собирает факты из множества источников (веб, документация Context7, Confluence, кодовая база) и создаёт структурированный исследовательский отчёт — без принятия решений и без модификации кода."
+tools: Read, Write, Grep, Glob, WebFetch, WebSearch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__atlassian__confluence_search, mcp__atlassian__confluence_get_page, mcp__atlassian__confluence_get_page_children, mcp__atlassian__confluence_get_comments, mcp__atlassian__confluence_get_page_history, mcp__atlassian__confluence_get_labels, mcp__atlassian__confluence_download_content_attachments
 model: sonnet
 ---
 
