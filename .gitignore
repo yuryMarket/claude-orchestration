@@ -220,3 +220,5 @@ __marimo__/
 /telemetry/
 history.jsonl
 mcp-needs-auth-cache.json
+settings.local.json
+stats-cache.json
