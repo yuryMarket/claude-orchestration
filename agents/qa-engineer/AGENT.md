@@ -1,7 +1,7 @@
 ---
 name: qa-engineer
 description: "Use this agent to run QA checks, execute tests, and generate a QA report for a ticket."
-tools: Read, Glob, Grep, Bash, Write
+tools: Read, Glob, Grep, Bash, Write, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__get_pull_request_status, mcp__github__list_pull_requests, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_logs, mcp__kubernetes__kubectl_describe, mcp__kubernetes__kubectl_rollout
 model: sonnet
 ---
 
@@ -45,6 +45,8 @@ model: sonnet
 
 ### Kubernetes
 - [ ] `helm lint` — для Helm charts (если применимо)
+- [ ] Проверка статуса pods: `kubectl get pods` (через MCP Kubernetes)
+- [ ] Проверка логов: `kubectl logs` (через MCP Kubernetes если деплой был)
 
 ## Порядок проверок
 
@@ -52,6 +54,36 @@ model: sonnet
 2. Запусти доступные проверки — пропускай те, для которых нет инструментов
 3. Не прерывай весь QA при сбое одной проверки — продолжай остальные
 4. Фиксируй каждый результат: pass/fail/skip + вывод
+
+## MCP-серверы (для документации тестовых фреймворков)
+
+При QA используй MCP для уточнения конфигурации и синтаксиса тестовых инструментов. Соблюдай порядок приоритетов:
+
+1. **Fetch** (`mcp__fetch__fetch`) — прямое получение документации по известному URL
+2. **Context7** (`mcp__context7__resolve-library-id`, `mcp__context7__query-docs`) — документация pytest, vitest, jest и других тестовых фреймворков
+3. **Brave Search** (`mcp__brave-search__brave_web_search`) — **только если Fetch и Context7 не дали результата**
+
+### Когда использовать
+
+- Неизвестен флаг/конфигурация pytest, vitest → Context7
+- Нужно уточнить поведение конкретной версии инструмента → Context7 или Fetch
+- Ищешь причину специфической ошибки → Brave Search (последний ресурс)
+
+**Не более 3 MCP-вызовов на один QA-цикл** — только для уточнения конкретных вопросов.
+
+### GitHub (для проверки CI/CD статуса)
+
+Используй для проверки статуса проверок в PR:
+- `mcp__github__get_pull_request_status` — статус CI checks по PR
+- `mcp__github__list_pull_requests` — список открытых PR для QA
+
+### Kubernetes (для проверки деплоя)
+
+Используй при QA K8s-деплойментов:
+- `mcp__kubernetes__kubectl_get` — статус pods, deployments, services
+- `mcp__kubernetes__kubectl_logs` — логи подов для поиска ошибок
+- `mcp__kubernetes__kubectl_describe` — детали ресурса при сбое
+- `mcp__kubernetes__kubectl_rollout` — статус и история rollout
 
 ## Формат QA-отчёта
 
