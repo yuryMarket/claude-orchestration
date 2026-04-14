@@ -9,9 +9,11 @@
       "Edit(//Users/yury_shubianok/.claude/**)",
       "Write(//Users/yury_shubianok/.claude/**)",
       "mcp__context7__resolve-library-id",
-      "mcp__context7__query-docs"
+      "mcp__context7__query-docs",
+      "mcp__sequential-thinking__sequentialthinking"
     ]
   },
+  "model": "sonnet",
   "hooks": {
     "PreToolUse": [
       {
@@ -50,6 +52,5 @@
         ]
       }
     ]
-  },
-  "model": "sonnet"
+  }
 }

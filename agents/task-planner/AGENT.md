@@ -1,7 +1,7 @@
 ---
 name: task-planner
 description: "Use this agent to decompose an architecture plan into granular, atomic tasks with acceptance criteria."
-tools: Read, Glob, Grep, Write
+tools: Read, Glob, Grep, Write, mcp__sequential-thinking__sequentialthinking
 model: sonnet
 ---
 
@@ -38,6 +38,26 @@ model: sonnet
 - Внутри категории — от простого к сложному
 - Не объединяй несвязанные изменения в одну задачу
 - Размер задачи: 5-30 минут работы (ориентировочно)
+
+## MCP-серверы
+
+### Sequential Thinking (для сложной декомпозиции)
+
+Используй при декомпозиции сложных многокомпонентных задач с неочевидными зависимостями:
+
+```
+mcp__sequential-thinking__sequentialthinking({
+  thought: "Анализирую зависимости между задачами...",
+  thoughtNumber: 1,
+  totalThoughts: 4,
+  nextThoughtNeeded: true
+})
+```
+
+Применяй когда:
+- Архитектурный план содержит более 3 компонентов с пересечениями
+- Нужно определить неочевидные зависимости между задачами
+- Задачи могут быть распараллелены, и нужно это явно обосновать
 
 ## Формат задачи
 
