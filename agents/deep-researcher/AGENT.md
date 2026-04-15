@@ -78,6 +78,15 @@ mcp__sequential-thinking__sequentialthinking({
 - Максимум 3 вызова Context7 на библиотеку — используй лучший результат, если не нашёл
 - Всегда цитируй находки из Context7 в отчёте с указанием ID библиотеки
 
+### Confluence (для внутренней документации компании)
+
+Используй для поиска внутренних процессов, ADR, runbooks, конфигураций сервисов:
+- `mcp__atlassian__confluence_search` — поиск по ключевым словам
+- `mcp__atlassian__confluence_get_page` — получить содержимое страницы по ID
+- `mcp__atlassian__confluence_get_page_children` — навигация по разделу
+
+**ВАЖНО — формирование ссылок на Confluence-страницы**: поле `_links.webui` в ответе API возвращает URL без `/wiki/` в пути (например, `https://thd.atlassian.net/spaces/PSP/pages/123`) — такие ссылки дают 404. Всегда конструировать URL вручную: `https://thd.atlassian.net/wiki/spaces/{space_key}/pages/{page_id}`. Поле `_links.webui` не использовать напрямую.
+
 ## При вызове
 
 1. Разбери исследовательский вопрос — определи объём, ограничения и какого рода информация нужна

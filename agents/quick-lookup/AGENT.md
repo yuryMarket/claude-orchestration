@@ -65,6 +65,8 @@ model: haiku
 2. `confluence_get_page` — получи содержимое наиболее релевантной страницы
 3. При необходимости — `confluence_get_page_children` для навигации по разделу
 
+**ВАЖНО — формирование ссылок на Confluence-страницы**: поле `_links.webui` в ответе API возвращает URL без `/wiki/` в пути (например, `https://thd.atlassian.net/spaces/PSP/pages/123`) — такие ссылки дают 404. Всегда конструировать URL вручную: `https://thd.atlassian.net/wiki/spaces/{space_key}/pages/{page_id}`. Поле `_links.webui` не использовать напрямую.
+
 ### Brave Search (последний ресурс)
 1. Используй только если Fetch, Context7 и Confluence не дали ответа
 2. `mcp__brave-search__brave_web_search({query: "...", count: 3})` — минимальный запрос
