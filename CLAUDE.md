@@ -57,6 +57,7 @@
 | `skills-manager` | Создание и обновление скиллов (slash commands) в ~/.claude/skills/ |
 | `hooks-manager` | Создание и обновление хуков Claude Code в ~/.claude/hooks/ |
 | `quick-lookup` | Быстрая проверка фактов через Context7 (документация библиотек) и Confluence |
+| `gitops-reader` | Получение результатов Terraform plan/apply из комментариев PR и статусов GitHub Actions pipeline |
 
 ### Обязательное использование специализированных агентов
 
