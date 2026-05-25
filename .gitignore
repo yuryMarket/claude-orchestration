@@ -206,6 +206,9 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# Local runtime / cleanup markers
+.last-cleanup
+
 # Claude Code local/runtime data
 /agent-memory/
 /backups/
