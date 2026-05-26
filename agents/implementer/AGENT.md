@@ -1,7 +1,7 @@
 ---
 name: implementer
 description: "Use this agent to implement the next uncompleted task from a ticket's tasklist. Implements one task per invocation."
-tools: Read, Write, Edit, Glob, Grep, Bash, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__create_branch, mcp__github__push_files, mcp__github__create_pull_request, mcp__github__get_file_contents, mcp__github__get_issue, mcp__github__list_issues, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_rollout, mcp__kubernetes__kubectl_logs, mcp__kubernetes__kubectl_describe
+tools: Read, Write, Edit, Glob, Grep, Bash, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__create_branch, mcp__github__push_files, mcp__github__create_pull_request, mcp__github__get_file_contents, mcp__github__get_issue, mcp__github__list_issues, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_rollout, mcp__kubernetes__kubectl_logs, mcp__kubernetes__kubectl_describe, mcp__gcp__run_gcloud_command
 model: sonnet
 maxTurns: 50
 ---
