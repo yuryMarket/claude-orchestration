@@ -2,15 +2,348 @@
   "permissions": {
     "allow": [
       "WebSearch",
+
+      "Edit(/Users/yury_shubianok/core-ai/**)",
+      "Write(/Users/yury_shubianok/core-ai/**)",
       "Read(~/.claude/**)",
       "Edit(~/.claude/**)",
       "Write(~/.claude/**)",
       "Read(//Users/yury_shubianok/.claude/**)",
       "Edit(//Users/yury_shubianok/.claude/**)",
       "Write(//Users/yury_shubianok/.claude/**)",
+
       "mcp__context7__resolve-library-id",
       "mcp__context7__query-docs",
-      "mcp__sequential-thinking__sequentialthinking"
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__fetch__fetch",
+      "mcp__brave-search__brave_web_search",
+      "mcp__brave-search__brave_local_search",
+      "mcp__github__get_file_contents",
+      "mcp__github__search_repositories",
+      "mcp__github__search_code",
+      "mcp__github__search_issues",
+      "mcp__github__list_issues",
+      "mcp__github__get_issue",
+      "mcp__github__list_pull_requests",
+      "mcp__github__get_pull_request",
+      "mcp__github__get_pull_request_files",
+      "mcp__github__get_pull_request_comments",
+      "mcp__github__get_pull_request_reviews",
+      "mcp__github__get_pull_request_status",
+      "mcp__github__list_workflow_runs",
+      "mcp__github__get_workflow_run",
+      "mcp__github__list_jobs_for_workflow_run",
+      "mcp__github__download_workflow_run_logs",
+      "mcp__atlassian__confluence_search",
+      "mcp__atlassian__confluence_get_page",
+      "mcp__atlassian__confluence_get_page_children",
+      "mcp__atlassian__confluence_get_comments",
+      "mcp__atlassian__confluence_get_page_history",
+      "mcp__atlassian__confluence_get_labels",
+      "mcp__atlassian__confluence_download_content_attachments",
+      "mcp__atlassian__jira_search_issues",
+      "mcp__atlassian__jira_get_issue",
+      "mcp__atlassian__jira_list_projects",
+      "mcp__atlassian__jira_get_project",
+      "mcp__atlassian__jira_get_sprint",
+      "mcp__kubernetes__kubectl_get",
+      "mcp__kubernetes__kubectl_describe",
+      "mcp__kubernetes__kubectl_logs",
+      "mcp__kubernetes__kubectl_rollout",
+      "mcp__kubernetes__explain_resource",
+      "mcp__grafana__list_dashboards",
+      "mcp__grafana__get_dashboard",
+      "mcp__grafana__query_datasource",
+      "mcp__grafana__list_datasources",
+      "mcp__grafana__get_datasource",
+      "mcp__grafana__list_alert_rules",
+      "mcp__grafana__get_alert_rule",
+      "mcp__grafana__list_incidents",
+      "mcp__grafana__get_incident",
+      "mcp__grafana__search_dashboards",
+      "mcp__gcp__run_gcloud_command",
+
+      "Read",
+      "Glob",
+      "Write(~/**)",
+      "Edit(~/**)",
+
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(echo *)",
+      "Bash(printf *)",
+      "Bash(tee *)",
+      "Bash(xargs *)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(whereis *)",
+      "Bash(whoami)",
+      "Bash(id)",
+      "Bash(uname *)",
+      "Bash(date *)",
+      "Bash(stat *)",
+      "Bash(file *)",
+      "Bash(diff *)",
+      "Bash(sort *)",
+      "Bash(uniq *)",
+      "Bash(cut *)",
+      "Bash(awk *)",
+      "Bash(sed *)",
+      "Bash(jq *)",
+      "Bash(yq *)",
+      "Bash(xmllint *)",
+      "Bash(base64 *)",
+      "Bash(openssl *)",
+      "Bash(env)",
+      "Bash(printenv *)",
+      "Bash(export *)",
+
+      "Bash(touch *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(rm *)",
+      "Bash(ln *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(tar *)",
+      "Bash(zip *)",
+      "Bash(unzip *)",
+      "Bash(gzip *)",
+      "Bash(gunzip *)",
+      "Bash(bzip2 *)",
+      "Bash(xz *)",
+      "Bash(rsync *)",
+
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(ssh *)",
+      "Bash(scp *)",
+      "Bash(ping *)",
+      "Bash(dig *)",
+      "Bash(nslookup *)",
+      "Bash(host *)",
+
+      "Bash(ps *)",
+      "Bash(kill *)",
+      "Bash(pkill *)",
+      "Bash(lsof *)",
+      "Bash(df *)",
+      "Bash(du *)",
+
+      "Bash(git *)",
+      "Bash(gh *)",
+
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(pytest *)",
+      "Bash(ruff *)",
+      "Bash(mypy *)",
+      "Bash(black *)",
+      "Bash(isort *)",
+      "Bash(flake8 *)",
+      "Bash(bandit *)",
+      "Bash(pylint *)",
+      "Bash(coverage *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(uv *)",
+      "Bash(poetry *)",
+      "Bash(pipenv *)",
+      "Bash(conda *)",
+
+      "Bash(node *)",
+      "Bash(ts-node *)",
+      "Bash(tsx *)",
+      "Bash(tsc *)",
+      "Bash(vitest *)",
+      "Bash(jest *)",
+      "Bash(mocha *)",
+      "Bash(eslint *)",
+      "Bash(prettier *)",
+      "Bash(webpack *)",
+      "Bash(vite *)",
+      "Bash(esbuild *)",
+
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(pnpm *)",
+      "Bash(yarn *)",
+      "Bash(bun *)",
+      "Bash(bunx *)",
+
+      "Bash(terraform fmt *)",
+      "Bash(terraform init *)",
+      "Bash(terraform plan *)",
+      "Bash(terraform validate *)",
+      "Bash(terraform apply *)",
+      "Bash(terraform output *)",
+      "Bash(terraform show *)",
+      "Bash(terraform state *)",
+      "Bash(terraform workspace *)",
+      "Bash(terraform providers *)",
+      "Bash(terraform graph *)",
+      "Bash(terraform version *)",
+      "Bash(terraform import *)",
+      "Bash(terraform taint *)",
+      "Bash(terraform untaint *)",
+      "Bash(tflint *)",
+      "Bash(checkov *)",
+      "Bash(terragrunt *)",
+      "Bash(tofu fmt *)",
+      "Bash(tofu init *)",
+      "Bash(tofu plan *)",
+      "Bash(tofu validate *)",
+      "Bash(tofu apply *)",
+      "Bash(tofu output *)",
+      "Bash(tofu show *)",
+      "Bash(tofu state *)",
+      "Bash(tofu workspace *)",
+
+      "Bash(docker build *)",
+      "Bash(docker buildx *)",
+      "Bash(docker ps *)",
+      "Bash(docker images *)",
+      "Bash(docker image *)",
+      "Bash(docker inspect *)",
+      "Bash(docker logs *)",
+      "Bash(docker pull *)",
+      "Bash(docker push *)",
+      "Bash(docker tag *)",
+      "Bash(docker run *)",
+      "Bash(docker exec *)",
+      "Bash(docker stop *)",
+      "Bash(docker start *)",
+      "Bash(docker restart *)",
+      "Bash(docker rm *)",
+      "Bash(docker rmi *)",
+      "Bash(docker volume *)",
+      "Bash(docker network *)",
+      "Bash(docker compose *)",
+      "Bash(docker-compose *)",
+      "Bash(docker system *)",
+      "Bash(docker stats *)",
+      "Bash(docker info *)",
+      "Bash(docker version *)",
+      "Bash(docker context *)",
+
+      "Bash(kubectl get *)",
+      "Bash(kubectl describe *)",
+      "Bash(kubectl logs *)",
+      "Bash(kubectl apply *)",
+      "Bash(kubectl delete *)",
+      "Bash(kubectl diff *)",
+      "Bash(kubectl explain *)",
+      "Bash(kubectl version *)",
+      "Bash(kubectl cluster-info *)",
+      "Bash(kubectl top *)",
+      "Bash(kubectl config *)",
+      "Bash(kubectl port-forward *)",
+      "Bash(kubectl rollout *)",
+      "Bash(kubectl exec *)",
+      "Bash(kubectl cp *)",
+      "Bash(kubectl scale *)",
+      "Bash(kubectl patch *)",
+      "Bash(kubectl label *)",
+      "Bash(kubectl annotate *)",
+      "Bash(kubectl create *)",
+      "Bash(kubectl run *)",
+      "Bash(kubectl edit *)",
+      "Bash(kubectl expose *)",
+      "Bash(kubectl set *)",
+      "Bash(kubectl auth *)",
+      "Bash(kubectl api-resources *)",
+      "Bash(kubectl api-versions *)",
+      "Bash(kubectl cordon *)",
+      "Bash(kubectl uncordon *)",
+      "Bash(kubectl drain *)",
+      "Bash(kubectl taint *)",
+      "Bash(kubectl replace *)",
+      "Bash(kubectl wait *)",
+      "Bash(kubectl proxy *)",
+
+      "Bash(helm list *)",
+      "Bash(helm status *)",
+      "Bash(helm get *)",
+      "Bash(helm show *)",
+      "Bash(helm lint *)",
+      "Bash(helm template *)",
+      "Bash(helm repo *)",
+      "Bash(helm search *)",
+      "Bash(helm install *)",
+      "Bash(helm upgrade *)",
+      "Bash(helm uninstall *)",
+      "Bash(helm rollback *)",
+      "Bash(helm test *)",
+      "Bash(helm pull *)",
+      "Bash(helm dependency *)",
+      "Bash(helm create *)",
+      "Bash(helm version *)",
+      "Bash(helm history *)",
+      "Bash(helm package *)",
+      "Bash(helm env *)",
+      "Bash(kustomize *)",
+
+      "Bash(gcloud *)",
+      "Bash(gsutil *)",
+      "Bash(aws *)",
+      "Bash(az *)",
+      "Bash(doctl *)",
+
+      "Bash(ansible *)",
+      "Bash(ansible-playbook *)",
+      "Bash(ansible-lint *)",
+      "Bash(ansible-galaxy *)",
+      "Bash(ansible-vault *)",
+      "Bash(molecule *)",
+
+      "Bash(make *)",
+      "Bash(cmake *)",
+      "Bash(cargo *)",
+      "Bash(go *)",
+      "Bash(mvn *)",
+      "Bash(gradle *)",
+
+      "Bash(vault *)",
+      "Bash(sops *)",
+      "Bash(age *)",
+      "Bash(gpg *)",
+      "Bash(trivy *)",
+      "Bash(grype *)",
+      "Bash(snyk *)",
+
+      "Bash(yamllint *)",
+      "Bash(jsonlint *)",
+      "Bash(kubeval *)",
+      "Bash(kubeconform *)",
+      "Bash(hadolint *)",
+      "Bash(actionlint *)",
+      "Bash(pre-commit *)",
+      "Bash(argocd *)",
+      "Bash(flux *)",
+      "Bash(skaffold *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm -fr *)",
+      "Bash(rm -r *)",
+      "Bash(sudo rm *)",
+      "Bash(git push --force*)",
+      "Bash(git push -f *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -f*)",
+      "Bash(git checkout -- *)",
+      "Bash(terraform destroy *)",
+      "Bash(tofu destroy *)",
+      "Bash(dropdb *)",
+      "Bash(destroydb *)"
     ]
   },
   "model": "sonnet",
@@ -22,6 +355,26 @@
           {
             "type": "command",
             "command": "/Users/yury_shubianok/.claude/hooks/gate-workflow.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-question.js\""
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/yury_shubianok/.claude/hooks/pre-compact.sh",
+            "timeout": 30
           }
         ]
       }
@@ -38,6 +391,16 @@
             "command": "/Users/yury_shubianok/.claude/hooks/session-start-pending.sh"
           }
         ]
+      },
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/yury_shubianok/.claude/hooks/session-start-compact.sh",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "Stop": [
@@ -50,7 +413,36 @@
             "statusMessage": "Анализирую паттерны коррекций..."
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-stop.js\""
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-permission.js\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-prompt.js\""
+          }
+        ]
       }
     ]
-  }
+  },
+  "theme": "dark"
 }

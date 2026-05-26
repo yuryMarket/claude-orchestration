@@ -1,7 +1,7 @@
 ---
 name: qa-engineer
 description: "Use this agent to run QA checks, execute tests, and generate a QA report for a ticket."
-tools: Read, Glob, Grep, Bash, Write, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__get_pull_request_status, mcp__github__list_pull_requests, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_logs, mcp__kubernetes__kubectl_describe, mcp__kubernetes__kubectl_rollout
+tools: Read, Glob, Grep, Bash, Write, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__get_pull_request_status, mcp__github__list_pull_requests, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_logs, mcp__kubernetes__kubectl_describe, mcp__kubernetes__kubectl_rollout, mcp__grafana__list_dashboards, mcp__grafana__get_dashboard, mcp__grafana__search_dashboards, mcp__grafana__list_alert_rules, mcp__grafana__get_alert_rule, mcp__gcp__run_gcloud_command
 model: sonnet
 ---
 
