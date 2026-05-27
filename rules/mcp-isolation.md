@@ -15,6 +15,7 @@
 | `context7` | `deep-researcher` | Глубокое исследование: сравнение подходов, миграция версий |
 | `atlassian` (Confluence) | `quick-lookup` | Точечный поиск: конкретная страница, процесс, runbook |
 | `atlassian` (Confluence) | `deep-researcher` | Глубокий анализ: сбор информации с нескольких страниц |
+| `mcp__gcp__run_gcloud_command` | `infra-operator` | Любые GCP CLI операции: удаление ресурсов, describe, list, IAM |
 
 Другие MCP-серверы при появлении — по аналогии: назначить или создать субагента с нужными `tools:`.
 
@@ -22,6 +23,7 @@
 
 - **Точечный вопрос** (один факт, один snippet) — `quick-lookup` (модель haiku, быстро и дёшево)
 - **Исследование** (сравнение, анализ нескольких источников) — `deep-researcher` (модель sonnet, глубже и дороже)
+- **GCP операции** (удаление, describe, list, IAM) — `infra-operator` (никогда не вызывать `mcp__gcp__run_gcloud_command` из оркестратора напрямую)
 
 ## Шаблоны вызова оркестратором
 
@@ -81,8 +83,32 @@ Agent(subagent_type="deep-researcher"):
 Сохрани отчёт в: docs/research/fastapi-logging.md
 ```
 
+### infra-operator: GCP операции
+
+```
+Agent(subagent_type="infra-operator"):
+
+Выполни следующие GCP операции в проекте <project>:
+<список операций или описание задачи>
+
+Логи сохрани в: <путь>
+```
+
+Пример:
+
+```
+Agent(subagent_type="infra-operator"):
+
+Удали следующие ресурсы в проекте np-te-core-ai (порядок важен):
+1. gcloud compute network-attachments delete test-attachment --region=us-central1 --quiet
+2. gcloud compute networks subnets delete test-subnet --region=us-central1 --quiet
+
+Логи сохрани в: ~/cor1-297-round3/logs/deletion-log.csv
+```
+
 ## Почему
 
 - MCP-вызовы дорогие по токенам — quick-lookup на модели haiku минимизирует стоимость
 - Изоляция предотвращает засорение контекста оркестратора сырыми данными из внешних источников
 - Результаты кэшируются в файл (quick-lookup в `~/docs/quick-lookup/`, deep-researcher в `docs/research/`) — повторный запрос не нужен
+- Прямой вызов `mcp__gcp__run_gcloud_command` из оркестратора затягивает в главный контекст полные JSON-ответы (листинги десятков ресурсов, большие describe-выводы); `infra-operator` сохраняет детали в файл и возвращает только структурированное резюме

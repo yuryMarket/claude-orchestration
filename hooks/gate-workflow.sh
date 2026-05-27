@@ -21,13 +21,10 @@ INPUT="$(cat)"
 # Извлекаем путь к редактируемому файлу (если есть)
 FILE_PATH="$(echo "$INPUT" | grep -o '"file_path"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"file_path"[[:space:]]*:[[:space:]]*"//' | sed 's/"$//' 2>/dev/null || echo "")"
 
-# Исключения: AIDD-артефакты всегда разрешены
+# Исключения: AIDD-артефакты всегда разрешены (абсолютные и относительные пути)
 if [ -n "$FILE_PATH" ]; then
   case "$FILE_PATH" in
-    docs/prd/*|docs/plan/*|docs/tasklist/*|docs/research/*|docs/adr/*|docs/.active_ticket)
-      exit 0
-      ;;
-    reports/*)
+    *docs/prd/*|*docs/plan/*|*docs/tasklist/*|*docs/research/*|*docs/adr/*|*docs/.active_ticket|*docs/investigations/*|*docs/reports/*|*reports/*)
       exit 0
       ;;
   esac
@@ -35,10 +32,13 @@ fi
 
 # Проверка gates для редактирования исходного кода
 
-# Gate: PRD_READY
+# Gate: PRD_READY — проверяем оба возможных расположения
 PRD_FILE="docs/prd/${TICKET}.prd.md"
 if [ ! -f "$PRD_FILE" ]; then
-  echo "AIDD Gate BLOCKED: PRD не найден ($PRD_FILE). Выполни /idea $TICKET" >&2
+  PRD_FILE=".claude/docs/prd/${TICKET}.prd.md"
+fi
+if [ ! -f "$PRD_FILE" ]; then
+  echo "AIDD Gate BLOCKED: PRD не найден. Выполни /idea $TICKET" >&2
   exit 2
 fi
 
@@ -48,8 +48,11 @@ if echo "$PRD_STATUS" | grep -qi "DRAFT"; then
   exit 2
 fi
 
-# Gate: PLAN_APPROVED
+# Gate: PLAN_APPROVED — проверяем оба расположения
 PLAN_FILE="docs/plan/${TICKET}.md"
+if [ ! -f "$PLAN_FILE" ]; then
+  PLAN_FILE=".claude/docs/plan/${TICKET}.md"
+fi
 if [ ! -f "$PLAN_FILE" ]; then
   echo "AIDD Gate BLOCKED: План не найден ($PLAN_FILE). Выполни /plan $TICKET" >&2
   exit 2
@@ -61,8 +64,11 @@ if ! echo "$PLAN_STATUS" | grep -qi "PLAN_APPROVED"; then
   exit 2
 fi
 
-# Gate: TASKLIST_READY
+# Gate: TASKLIST_READY — проверяем оба расположения
 TASKLIST_FILE="docs/tasklist/${TICKET}.md"
+if [ ! -f "$TASKLIST_FILE" ]; then
+  TASKLIST_FILE=".claude/docs/tasklist/${TICKET}.md"
+fi
 if [ ! -f "$TASKLIST_FILE" ]; then
   echo "AIDD Gate BLOCKED: Tasklist не найден ($TASKLIST_FILE). Выполни /tasks $TICKET" >&2
   exit 2

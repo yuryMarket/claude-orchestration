@@ -1,7 +1,7 @@
 ---
 name: gitops-reader
-description: "Use this agent when you need to collect and aggregate information from a GitHub PR in GitOps processes: Terraform plan/apply results from PR comments (TFE, Atlantis, GitHub Actions), GitHub Actions workflow run statuses, and CI check results. Invoke when user asks 'get info about Terraform plan in PR', 'what happened in Terraform apply', 'check GitHub Actions pipeline for this PR', or 'почему упал terraform plan в PR #N'. Returns a structured inline summary — no files written."
-tools: Read, mcp__fetch__fetch, mcp__github__get_pull_request, mcp__github__get_pull_request_comments, mcp__github__get_pull_request_reviews, mcp__github__get_pull_request_status, mcp__github__list_pull_requests, mcp__github__get_pull_request_files, mcp__github__list_workflow_runs, mcp__github__get_workflow_run, mcp__github__list_jobs_for_workflow_run, mcp__github__download_workflow_run_logs, mcp__gcp__run_gcloud_command
+description: "Use this agent when you need to collect and aggregate information from a GitHub PR in GitOps processes: Terraform plan/apply results from PR comments (TFE, Atlantis, GitHub Actions), GitHub Actions workflow run statuses, and CI check results. Invoke when user asks 'get info about Terraform plan in PR', 'what happened in Terraform apply', 'check GitHub Actions pipeline for this PR', 'почему упал terraform plan в PR #N', 'разберись что за ошибки в этом PR', 'посмотри apply в PR', 'найди PR который вызвал ошибки', 'в этом PR видны ошибки — разберись'. Returns a structured inline summary — no files written."
+tools: Read, Bash, mcp__fetch__fetch, mcp__github__get_pull_request, mcp__github__get_pull_request_comments, mcp__github__get_pull_request_reviews, mcp__github__get_pull_request_status, mcp__github__list_pull_requests, mcp__github__get_pull_request_files, mcp__github__list_workflow_runs, mcp__github__get_workflow_run, mcp__github__list_jobs_for_workflow_run, mcp__github__download_workflow_run_logs, mcp__gcp__run_gcloud_command
 model: sonnet
 ---
 
@@ -14,6 +14,48 @@ model: sonnet
 3. Распарси terraform-комментарии по известным паттернам
 4. Сформируй резюме в установленном формате
 5. Верни резюме inline — без сохранения файлов
+
+## Стратегия доступа к GitHub API
+
+Используй инструменты в следующем приоритете:
+
+### Приоритет 1: mcp__github__* (если доступны)
+
+Пробуй вызвать `mcp__github__get_pull_request` для проверки доступности.
+
+### Приоритет 2: gh CLI через Bash (fallback)
+
+Если `mcp__github__*` недоступны или возвращают 404/403 — используй `gh` CLI:
+
+```bash
+# Базовая информация о PR
+gh pr view {number} --repo {owner}/{repo}
+
+# Комментарии к PR (issue comments — именно здесь TFE пишет plan/apply)
+gh api repos/{owner}/{repo}/issues/{number}/comments --paginate
+
+# Файлы, изменённые в PR
+gh pr view {number} --repo {owner}/{repo} --json files
+
+# Проверка аккаунтов (если 404 — попробовать переключить)
+gh auth status
+gh auth switch --user {другой_аккаунт}
+```
+
+Парсинг JSON-ответа `gh api` через Python:
+
+```bash
+gh api repos/{owner}/{repo}/issues/{number}/comments --paginate | python3 -c "
+import json, sys
+data = json.load(sys.stdin)
+for c in data:
+    if 'terraform' in c['body'].lower() or 'Apply' in c['body'] or 'Plan' in c['body']:
+        print('=== BY', c['user']['login'], '===')
+        print(c['body'][:3000])
+"
+```
+
+Если у пользователя несколько GitHub-аккаунтов (`gh auth status` показывает несколько) — попробуй переключиться на аккаунт с доступом к нужной организации перед запросом.
 
 ## Сбор данных
 
@@ -29,7 +71,7 @@ model: sonnet
 - `mcp__github__get_pull_request_comments` — inline review comments
 - `mcp__github__get_pull_request_reviews` — review-level комментарии
 
-Если Terraform-комментарии не найдены в review — проверь body самого PR. TFE и Atlantis обычно постят в issue comments, а не review comments.
+**ВАЖНО**: TFE и Atlantis всегда постят в issue comments (`/issues/{number}/comments`), а не в review comments. При использовании gh CLI — запрашивай именно этот endpoint. При использовании mcp__github__* — оба источника уже покрыты.
 
 ### Шаг 3: Парсинг Terraform-комментариев
 
