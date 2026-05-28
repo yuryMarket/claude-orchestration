@@ -27,7 +27,15 @@ if [ -n "$FILE_PATH" ]; then
     *docs/prd/*|*docs/plan/*|*docs/tasklist/*|*docs/research/*|*docs/adr/*|*docs/.active_ticket|*docs/investigations/*|*docs/reports/*|*reports/*)
       exit 0
       ;;
+    # Системные файлы Claude Code — никогда не блокировать
+    */.claude/*|*/\.claude/*)
+      exit 0
+      ;;
   esac
+  # Абсолютный путь содержит .claude/ — разрешаем
+  if echo "$FILE_PATH" | grep -q '/\.claude/'; then
+    exit 0
+  fi
 fi
 
 # Проверка gates для редактирования исходного кода
