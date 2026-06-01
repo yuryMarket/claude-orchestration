@@ -10,15 +10,42 @@ import os
 import threading
 from datetime import datetime
 
+def state_dir():
+    """Return the absolute path of the plugin's state directory.
+
+    Resolution precedence (highest first):
+      1. SECURITY_WARNINGS_STATE_DIR — plugin-specific override (existing)
+      2. CLAUDE_CONFIG_DIR/security  — CC's config-dir env var (#1868)
+      3. ~/.claude/security          — default fallback
+
+    Empty-string env vars are treated as not-set so a misconfigured shell
+    (`CLAUDE_CONFIG_DIR=` with no value) doesn't silently write to
+    /security at the filesystem root.
+
+    Returns a fully-expanded absolute path (no literal `~`) so subprocess
+    callers can pass it through to code that doesn't re-expand tildes.
+
+    Called per-invocation rather than cached at import time so test
+    monkeypatches of the env vars take effect — the plugin's hooks each
+    run as fresh subprocesses in production, so the per-call cost is
+    negligible compared to subprocess spawn.
+    """
+    explicit = os.environ.get("SECURITY_WARNINGS_STATE_DIR")
+    if explicit:
+        return os.path.expanduser(explicit)
+    cc_config = os.environ.get("CLAUDE_CONFIG_DIR")
+    if cc_config:
+        return os.path.expanduser(os.path.join(cc_config, "security"))
+    return os.path.expanduser("~/.claude/security")
+
+
 # Debug log file. Lives under the plugin state dir (default ~/.claude/security/)
 # rather than /tmp because /tmp is world-writable on multi-user hosts (TOCTOU /
 # symlink-attack surface, cross-user log leakage). Overridable per-process via
-# SECURITY_GUIDANCE_DEBUG_LOG, or per-state-dir via SECURITY_WARNINGS_STATE_DIR.
-_DEFAULT_STATE_DIR = os.path.expanduser(
-    os.environ.get("SECURITY_WARNINGS_STATE_DIR") or "~/.claude/security"
-)
+# SECURITY_GUIDANCE_DEBUG_LOG, or per-state-dir via SECURITY_WARNINGS_STATE_DIR
+# (plugin-specific override) or CLAUDE_CONFIG_DIR (CC-wide config dir, #1868).
 DEBUG_LOG_FILE = os.environ.get("SECURITY_GUIDANCE_DEBUG_LOG") or os.path.join(
-    _DEFAULT_STATE_DIR, "log.txt"
+    state_dir(), "log.txt"
 )
 # Cap the debug log so parallel-worker fleets don't fill disk. When the active
 # file exceeds this it's atomically rotated to <file>.1 (overwriting any prior
