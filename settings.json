@@ -473,7 +473,8 @@
       "Bash(mkdir -p /Users/yury_shubianok/core-ai/.claude/docs && echo \"OK\")",
       "Bash(touch ~/.claude/hooks/claude-notifier.js && echo \"OK\")",
       "Bash(GH_USER=EN383ER_thdgit gh repo list one-thd --limit 30)",
-      "Bash(mkdir -p /Users/yury_shubianok/core-ai/.claude/docs/research && ls /Users/yury_shubianok/core-ai/.claude/docs/ 2>&1)"
+      "Bash(mkdir -p /Users/yury_shubianok/core-ai/.claude/docs/research && ls /Users/yury_shubianok/core-ai/.claude/docs/ 2>&1)",
+      "mcp__atlassian__jira_add_comment"
     ],
     "deny": [
       "Bash(rm -rf *)",
