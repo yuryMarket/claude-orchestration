@@ -5,10 +5,13 @@
 ## Точка входа
 
 1. Определи ticket ID (спроси или предложи `FEAT-001`)
-2. Создай `docs/` если нет, запиши ticket ID в `docs/.active_ticket`
+2. Зафиксируй активный тикет (per-session изоляция):
+   - (a) Узнай `session_id`: из строки контекста `AIDD session_id: <S>` (её инжектит `session-start.sh`) ИЛИ `Bash(printf '%s' "$CLAUDE_CODE_SESSION_ID")`.
+   - (b) Если `session_id` известен — запиши per-session файл `~/.claude/sessions/aidd/<S>.json` с полями `{ticket, cwd, source:"orchestrator", updated}` (атомарно: `python3 -c` через mkstemp + `os.replace`).
+   - (c) Запиши legacy `docs/.active_ticket` УСЛОВНО через helper: `Bash(bash ~/.claude/hooks/_lib/aidd-write-legacy.sh "<cwd>" "<ticket>")`. Helper записывает, только если файл пуст или уже содержит тот же тикет — не перетирает указатель параллельной сессии. Вызывай всегда (если `session_id` неизвестен — helper отработает так же; создаёт `docs/` при необходимости).
 3. Начни с Этапа 1
 
-Существующий ticket — прочитай `docs/.active_ticket`, проверь артефакты, продолжи с первого незавершённого этапа.
+Существующий ticket — резолюция per-session (primary): строка `AIDD session_id: <S>` в контексте → файл `~/.claude/sessions/aidd/<S>.json`; fallback — `docs/.active_ticket`. `session-start.sh` уже инжектил активный тикет в контекст при старте. Проверь артефакты, продолжи с первого незавершённого этапа.
 
 ## Протокол пауз (ОБЯЗАТЕЛЬНО)
 
@@ -76,3 +79,4 @@
 - Оркестратор хранит только резюме (≤20 строк на агента)
 - Gates проверяются оркестратором, не агентами
 - При неопределённости — СТОП и вопрос пользователю
+- Активный тикет изолирован по `session_id` (`~/.claude/sessions/aidd/<S>.json`); legacy `docs/.active_ticket` — fallback. Несколько сессий в одной директории ведут разные тикеты независимо.

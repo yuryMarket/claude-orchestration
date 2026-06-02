@@ -7,6 +7,20 @@
 # Exit 0 = всегда (вывод в stdout — это и есть полезная нагрузка)
 set -euo pipefail
 
+# --- Инвариант per-session тикета при compact (AIDD-001) ----------------------
+# session_id СТАБИЛЕН при compact: compaction не порождает новую сессию, id
+# сохраняется (research §2, §6). Поэтому per-session файл
+# ~/.claude/sessions/aidd/<session_id>.json уже существует и валиден после compact.
+#
+# Актуализацию per-session файла (обновление source=compact и updated) выполняет
+# session-start.sh — он тоже срабатывает на событие SessionStart с source=compact
+# (он зарегистрирован БЕЗ matcher, т.е. ловит все ветки, включая compact).
+#
+# Поэтому здесь МЕНЯТЬ логику записи per-session файла НЕ нужно — дублирование
+# upsert на критическом пути восстановления контекста (timeout 10с) только
+# увеличило бы blast radius. Этот хук остаётся узкоспециализированным: вывести
+# сохранённый compact-summary в контекст.
+
 # Читаем payload (может быть пустым)
 PAYLOAD="$(cat 2>/dev/null || true)"
 
