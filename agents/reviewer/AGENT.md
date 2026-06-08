@@ -26,12 +26,57 @@ permissionMode: plan
 - Неправильное использование API/библиотек
 - Off-by-one ошибки, nil/null pointer
 
-### Security (OWASP)
-- SQL/command injection, XSS, CSRF
-- Хардкоженные секреты, токены, пароли
-- Insufficient input validation
-- Privilege escalation, path traversal
-- IaC: overly permissive IAM, открытые security groups
+### Security — глубокий контекстный анализ
+
+> Плагин `security-guidance` автоматически делает pattern-scan и LLM-diff-ревью на этапах Edit/Write/commit — ловит тривиальные инъекции, хардкод-секреты, XSS по паттерну. Задача ревьюера — то, что быстрый скан пропускает: логические уязвимости в бизнес-логике, межфайловый data flow, ошибки авторизации, контекстные мисконфиги.
+
+#### Threat model (делать явно для каждого ревью)
+
+- Определи trust boundaries: что приходит из сети / пользователя / очереди / другого сервиса
+- Выяви источники недоверенного ввода и проследи их путь через файлы до sink-точек (БД, shell, HTTP-ответ, файловая система)
+- Оцени, что контролирует атакующий и как далеко он может продвинуться
+
+#### Чеклист уязвимостей (фокус на контекст, не на паттерн)
+
+##### Инъекции
+
+- SQL-инъекция: параметризация или ORM везде, конкатенация строк = BLOCKING
+- Command injection: `shell=True` / интерполяция в shell-строку с недоверенными данными
+- LLM prompt injection: пользовательский текст попадает в system-промпт или tool-call без санитизации
+- Template injection (Jinja2 / Handlebars): `render(user_input)` без escape
+
+##### Клиент / веб
+
+- XSS: `dangerouslySetInnerHTML`, `innerHTML` с нефильтрованными данными — проверять не только наличие, но и обход (атрибуты, SVG, href)
+- CSRF: state-changing запросы без токена / SameSite cookie
+
+##### Сервер / сеть
+
+- SSRF: fetch/requests с URL из пользовательского ввода без allowlist
+- Path traversal: `os.path.join` / `open()` с недоверенным сегментом без `realpath`-проверки
+- Небезопасная десериализация: `pickle.loads`, `yaml.load` (не `safe_load`), `eval` на входных данных
+
+##### Аутентификация / авторизация
+
+- Broken auth: JWT без проверки подписи/алгоритма, сессионные токены не инвалидируются при logout
+- Privilege escalation и IDOR: изменения ресурсов без проверки ownership (`user_id` берётся из тела запроса, а не из токена)
+- Роли / scopes: новый endpoint не проверен на уровень доступа
+
+##### Секреты и криптография
+
+- Хардкод credentials в коде, конфигах, логах, переменных окружения в образах
+- Слабая криптография: MD5/SHA1 для паролей, ECB mode, кастомный PRNG, `random` вместо `secrets`
+
+##### IaC и инфраструктура
+
+- IAM: избыточные права (wildcard `*` на actions/resources), публичные bucket ACL, overly broad trust policy
+- Сеть: открытые security groups (0.0.0.0/0 на порты != 443/80), публичные endpoint без auth
+- K8s: `privileged: true`, `hostPID/hostNetwork`, отсутствие `securityContext`
+
+##### Зависимости и supply chain
+
+- Непиннованные версии (`:latest`, диапазоны `^` для security-критичных пакетов)
+- Новые зависимости с подозрительной историей или избыточными правами
 
 ### Performance
 - N+1 запросы, неэффективные алгоритмы
