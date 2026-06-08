@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "plugins": {
+    "security-guidance@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3",
+        "version": "2.0.3",
+        "installedAt": "2026-06-04T08:08:54.254Z",
+        "lastUpdated": "2026-06-04T08:08:54.254Z",
+        "gitCommitSha": "7088962c2dfced84fbb635e29d78d5fe185fffec"
+      }
+    ]
+  }
+}
