@@ -1,5 +1,5 @@
 # Compact Recovery Context
-<!-- Generated: 2026-06-01T08:12:21Z | trigger: manual -->
+<!-- Generated: 2026-06-09T14:45:20Z | trigger: manual -->
 
 ## Git состояние
 
@@ -9,7 +9,7 @@
 
 ## AIDD Workflow
 
-**Тикет**: MLOPS-001
+**Тикет**: COR1-330
 
 **Незавершённые задачи**:
 ```
@@ -18,64 +18,71 @@
 
 **Архитектурный план** (начало):
 ```
-(нет данных)
+---
+Status: DRAFT
+Ticket: COR1-330
+---
+
+# Plan: COR1-330 — OPA auto-approval для Agent Engine resource types (tfe-np-te-core-ai)
+
+Status: DRAFT
+Date: 2026-06-08
+PRD: .claude/docs/prd/COR1-330.prd.md
+Research:
+- .claude/docs/research/COR1-330.md (инвентаризация типов, расчёт ресурсов)
+- .claude/docs/research/COR1-330-module-scoped.md (механизм OPA, module-scoped подходы A/B/C)
+- .claude/docs/research/COR1-330-security.md (security-классификация, DENY-список, вердикты)
+
+> **Замечания к PRD**: (1) PRD предлагает `total_resource_changes_allowed = 60` — это ОШИБКА (расчёт для shared VPC без SWP). Корректное значение — см. раздел "Лимит" ниже. (2) BLOCKING-вопрос PRD про prod workspace (`tfe-pr-te-core-ai`) — **out of scope**, выделен в отдельный тикет. Этот план затрагивает только `tfe-np-te-core-ai`.
+
+---
+
+## 1. Архитектурное решение
 ```
 
 ## Ключевые решения из разговора
 
 ### Решения и ключевые фразы:
-- ## Полная цепочка первопричин stuck upgrade — записана
+- Сверка с ground truth (я прогнал сам, не через интерпретацию агентов) — и она **опровергла** последний вердикт суб-агента. Важно.
 
-[.claude/docs/investigations/COR1-332-root-cause-chain.md](.claude/docs/investigations/COR1-332-root-cause-chain.md)
+## Противоречие разрешено: templates НЕ удалены
 
-**Ключевая находка**: stuck upgrade на np-usce1 — это **stacked failure** (L0 → L5):
+Все 7 instance-templates, на которые ссылаются MIG, **существуют** (проверил `instance-templates list` против ссылок каж...
+- Короткий ответ: **да, ноды можно догнать до gke.2190000 ДО правки PDB-конструкта** — конструкт не предусловие апгрейда. Но есть *другое* предусловие: **те самые 22 блокирующих PDB надо расчистить перед апгрейдом**, иначе drain снова застрянет, как 28.05.
 
-| Layer | Что |
-|---|---|
-| **L0** (land...
-- Пока ждём результат — отвечаю на главный вопрос:
+## Почему 22 PDB всё равно блокируют (даже с...
+- # 🚩 Сигнал: все артефакты по COR1-349 готовы
 
-## Первопричина — Gatekeeper. PDBs — усугубляющий фактор.
+## Прогресс: COR1-349
+| # | Этап | Статус | Артефакт |
+|---|------|--------|----------|
+| 1 | PRD | ✅ | [COR1-349.prd.md](.claude/docs/prd/COR1-349.prd.md) — `PRD_READY` |
+| 2 | Исследование | ✅ | `.claude/docs/{research,investigations}/COR1-341-*.md` (1...
+- Не гоняюсь за косметическим markdown-lint в плане (это пред-существующие предупреждения от генерации — на суть не влияют). Артефакты готовы.
 
-### Разделим две вещи
+# 🚩 Сигнал: все артефакты COR1-349 обновлены и готовы
 
-**Что произошло на 5-20**: на ВСЕХ 4 кластерах был GKE control-plane upgrade в одно окно (Google AUTO). На всех 4 apiserver pod рестартанул и попытался sync `default/ku...
-- Результат audit log: поиск нашёл только `np-te-core-ai-usea4` (другой кластер, не наши 4) от 2025-09-16. Для наших 4 кластеров **UpdateNodePool client-инициированный не зафиксирован** в 400-day окне.
+## Твои решения учтены
+- **#1** — Трек 1 → **3 PR** (PR-1 core-ai-dev 42 · PR-2 merch+hr-systems+stores...
+- Идея хорошая — она DRY и закрывает дыру «новые приложения забудут про фикс». И её **можно сделать без CR**, но с одним жёстким условием.
 
-Это значит:
-- Все наши node upgrades были **Google AUTO** (через internal API), не вручную
-- Либо U...
-- ## PDB (Pod Disruption Budget)
-
-**Что это**: kubernetes-ресурс, который защищает приложение от **voluntary disruptions** — плановых evict операций (node drain при upgrade, scale-down, maintenance). От crash/OOM/eviction по resource pressure он НЕ защищает (это involuntary).
-
-### Как работает
-
-```yam...
-- Ваше понимание **в основном корректное**, но с важными нюансами. Проверил сейчас prod Central-1.
-
-## pr-te-core-ai-usce1 — фактическое состояние
-
-| Параметр | Значение |
-|---|---|
-| Master version | 1.35.3-gke.1389000 ✅ |
-| Master upgrades в мае | **8 раз** (5-03, 5-04, 5-05, 5-10, 5-11×2, 5-13, 5-1...
+**Ключевое условие (иначе прилетит prod + CR):** это должен быть **новый отдельный констракт**, а **не** правка общего `kubePodDisruptionBudget.ts`. Общий оставля...
 
 ### Последние действия Claude (tool_use):
-- Bash: echo "=== Apiserver pod restart events (creation of new apiserver instances) np-usce1 vs pr-usce1 in May ===" && for clu
-- Read: /private/tmp/claude-501/-Users-yury-shubianok-core-ai/6d8e982b-501b-499a-a2ba-1dc35a4ab989/tasks/bd7fo8jr2.output
-- Bash: echo "=== Full 'Resetting endpoints' messages on np-usce1 — what master IPs ===" && gcloud logging read 'resource.type="
-- Bash: echo "=== Sample 'Resetting endpoints' across whole May np-usce1 — last few messages with IPs ===" && gcloud logging rea
-- Read: /private/tmp/claude-501/-Users-yury-shubianok-core-ai/6d8e982b-501b-499a-a2ba-1dc35a4ab989/tasks/b9e90hyr9.output
+- Agent
+- Write: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/cdk8s-pdb-alwaysallow-gotcha.md
+- Edit: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md
+- Read: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md
+- Edit: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md
 
 ### Последние сообщения пользователя:
-- === Pattern of apiserver 'Resetting endpoints' events PER cluster, May === np-te-core-ai-usce1:     1000 'Resetting endpoints' events in May np-te-core-ai-usea1:        0 'Resetting endpoints' events ...
-- === Cluster creation dates ALL 4 === np-te-core-ai-usce1: 2025-02-25T16:53:05+00:00	1.35.3-gke.1389000	1.31.5-gke.1068000 np-te-core-ai-usea1: 2025-02-25T14:34:26+00:00	1.35.3-gke.1389000	1.31.5-gke.1...
-- Command running in background with ID: bd7fo8jr2. Output is being written to: /private/tmp/claude-501/-Users-yury-shubianok-core-ai/6d8e982b-501b-499a-a2ba-1dc35a4ab989/tasks/bd7fo8jr2.output. You wil...
-- === Look for 'Resetting endpoints' anywhere in last 60 days for each cluster (any time, not just May) === np-te-core-ai-usea1:        0 events in last 60d pr-te-core-ai-usce1:        0 events in last ...
-- === Try kind-specific Constraint listing on np-usce1 ===   np-usce1 disallowdefaultnamespace:        1 constraint instances   np-usce1 requiredprobes:        1 constraint instances   np-usce1 disallow...
-- === Apiserver pod restart events (creation of new apiserver instances) np-usce1 vs pr-usce1 in May === --- np-te-core-ai-usce1 ---       10   ^^ apiserver 'Serving securely' events (= pod starts) in M...
-- 1	=== Endpoint reconciler hints from apiserver logs each cluster === 2	--- np-te-core-ai-usce1 --- 3	2026-05-06T07:46:14.755893Z	FLAG: --endpoint-reconciler-type="lease" 4	2026-05-06T07:46:17.677154Z	...
-- === Full 'Resetting endpoints' messages on np-usce1 — what master IPs === 2026-05-20T07:17:34.909955Z	Resetting endpoints for master service "kubernetes" to [10.43.132.130] 2026-05-20T07:17:47.1281539...
-- === Sample 'Resetting endpoints' across whole May np-usce1 — last few messages with IPs ===  === Was there 'Resetting endpoints' on np-usce1 BEFORE 5-20 (anytime in 2026) ? ===
-- 1	=== Cloud audit ops UPGRADE_NODES last 200 days — all 4 clusters === 2	--- project: np-te-core-ai --- 3	--- project: pr-te-core-ai --- 4	ERROR: (gcloud.logging.read) There was a problem refreshing y...
+- 1	import * as k8s from 'cdk8s-lib/imports/k8s/1.24'; 2	 3	interface Options { 4	    name: string; 5	    minAvailable?: number; 6	    maxUnavailable?: number; 7	} 8	 9	export function KubePodDisruption...
+- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
+- The user doesn't want to proceed with this tool use. The tool use was rejected (eg. if it was a file edit, the new_string was NOT written to the file). STOP what you are doing and wait for the user to...
+- [Request interrupted by user for tool use]
+- продолжаю.
+- похоже, сейчас верно. Проверяй.  https://github.com/one-thd/core-ai-cdk8s/pull/5681/changes
+- уже зеленый, сверяй.
+- сделал мердж, ждем результата. Мусор уберем в будущем.
+- File created successfully at: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/cdk8s-pdb-alwaysallow-gotcha.md (file state is current in your context — no need to Read it ba...
+- The file /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)

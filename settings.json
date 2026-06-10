@@ -474,7 +474,9 @@
       "Bash(touch ~/.claude/hooks/claude-notifier.js && echo \"OK\")",
       "Bash(GH_USER=EN383ER_thdgit gh repo list one-thd --limit 30)",
       "Bash(mkdir -p /Users/yury_shubianok/core-ai/.claude/docs/research && ls /Users/yury_shubianok/core-ai/.claude/docs/ 2>&1)",
-      "mcp__atlassian__jira_add_comment"
+      "mcp__atlassian__jira_add_comment",
+      "mcp__github__list_commits",
+      "mcp__github__pull_request_read"
     ],
     "deny": [
       "Bash(rm -rf *)",
@@ -732,8 +734,8 @@
       }
     ]
   },
-  "theme": "dark",
   "enabledPlugins": {
     "security-guidance@claude-plugins-official": true
-  }
+  },
+  "theme": "dark"
 }
