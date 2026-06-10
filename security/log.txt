@@ -1623,3 +1623,30 @@
 [2026-06-10 09:36:15.490] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
 
 [2026-06-10 09:36:15.508] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 09:38:42.081] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 09:38:42.082] Processing: hook_event=Stop, tool=
+[2026-06-10 09:38:42.118] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 09:38:42.118] Stop hook: empty review set
+[2026-06-10 09:45:14.684] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 09:45:14.685] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 09:45:14.734] No commits in repo, skipping baseline capture
+[2026-06-10 09:45:14.751] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 09:45:14.773] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 09:46:23.944] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 09:46:23.945] Processing: hook_event=Stop, tool=
+[2026-06-10 09:46:23.983] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 09:46:23.983] Stop hook: empty review set
+[2026-06-10 10:12:44.542] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 10:12:44.542] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 10:12:44.585] No commits in repo, skipping baseline capture
+[2026-06-10 10:12:44.601] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 10:12:44.632] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 10:16:59.013] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 10:16:59.013] Processing: hook_event=Stop, tool=
+[2026-06-10 10:16:59.047] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 10:16:59.048] Stop hook: empty review set
