@@ -476,7 +476,8 @@
       "Bash(mkdir -p /Users/yury_shubianok/core-ai/.claude/docs/research && ls /Users/yury_shubianok/core-ai/.claude/docs/ 2>&1)",
       "mcp__atlassian__jira_add_comment",
       "mcp__github__list_commits",
-      "mcp__github__pull_request_read"
+      "mcp__github__pull_request_read",
+      "mcp__github__push_files"
     ],
     "deny": [
       "Bash(rm -rf *)",
