@@ -1,5 +1,5 @@
 # Compact Recovery Context
-<!-- Generated: 2026-06-09T14:45:20Z | trigger: manual -->
+<!-- Generated: 2026-06-10T14:27:55Z | trigger: auto -->
 
 ## Git состояние
 
@@ -69,20 +69,20 @@ Research:
 **Ключевое условие (иначе прилетит prod + CR):** это должен быть **новый отдельный констракт**, а **не** правка общего `kubePodDisruptionBudget.ts`. Общий оставля...
 
 ### Последние действия Claude (tool_use):
+- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
+- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
+- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
+- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
 - Agent
-- Write: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/cdk8s-pdb-alwaysallow-gotcha.md
-- Edit: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md
-- Read: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md
-- Edit: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md
 
 ### Последние сообщения пользователя:
-- 1	import * as k8s from 'cdk8s-lib/imports/k8s/1.24'; 2	 3	interface Options { 4	    name: string; 5	    minAvailable?: number; 6	    maxUnavailable?: number; 7	} 8	 9	export function KubePodDisruption...
+- === now === 13:46:44 === op progress === RUNNING	Updating e2-standard-8, done with 20 out of 29 nodes (69.0%): 1 being processed, 4 succeeded === прогресс-таймлайн (poll, последние 6) === 13:37:44 | R...
+- я хочу убедиться, что GKE полностью сам сможет провести апгрейд и ничего не зависит, если мы применим наши текущие конфигурации. Поэтому пусть все идет само, ничего не форси.
+- давай пока продолжим работу по триггеру, передеплоя PDB во всех остальных приложениях. Напоминаю, что в рамках этого пиара мы триггернули и передеплоили те PDB, которые нас блокировали, но также нам н...
+- === всего np app.ts с PDB-хелпером KubePodDisruptionBudget ===      104 === уже тронуты в PR-1 (маркер-комментарий) ===       19  === ОСТАВШИЕСЯ — по командам (team) ===    5 blinds    4 com   29 core...
+- Your questions have been answered: "Как сгруппировать ~80 оставшихся касаний app.ts в PR для ленивой сходимости?"="4 PR по кластерам команд". You can now continue with these answers in mind.
+- 1	# COR1-349: Durable konnectivity fix — np PDB AlwaysAllow + Gatekeeper к fail-closed 2	 3	Status: TASKLIST_READY 4	Progress: Трек 1 / PR-1 #5681 открыт (реализация идёт) 5	Date: 2026-06-09 6	PRD: .c...
 - The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
-- The user doesn't want to proceed with this tool use. The tool use was rejected (eg. if it was a file edit, the new_string was NOT written to the file). STOP what you are doing and wait for the user to...
-- [Request interrupted by user for tool use]
-- продолжаю.
-- похоже, сейчас верно. Проверяй.  https://github.com/one-thd/core-ai-cdk8s/pull/5681/changes
-- уже зеленый, сверяй.
-- сделал мердж, ждем результата. Мусор уберем в будущем.
-- File created successfully at: /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/cdk8s-pdb-alwaysallow-gotcha.md (file state is current in your context — no need to Read it ba...
-- The file /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
+- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
+- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)

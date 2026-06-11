@@ -1650,3 +1650,585 @@
 [2026-06-10 10:16:59.047] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
 
 [2026-06-10 10:16:59.048] Stop hook: empty review set
+[2026-06-10 10:20:50.185] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 10:20:50.186] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 10:20:50.219] No commits in repo, skipping baseline capture
+[2026-06-10 10:20:50.234] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 10:20:50.251] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 10:25:06.571] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 10:25:06.571] Processing: hook_event=Stop, tool=
+[2026-06-10 10:25:06.626] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 10:25:06.626] Stop hook: empty review set
+[2026-06-10 10:25:06.694] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 10:25:06.695] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 10:25:06.725] No commits in repo, skipping baseline capture
+[2026-06-10 10:25:06.741] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 10:25:06.757] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 12:29:56.261] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:29:56.262] Processing: hook_event=Stop, tool=
+[2026-06-10 12:29:56.354] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:29:56.354] Stop hook: empty review set
+[2026-06-10 12:32:34.257] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:32:34.257] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 12:32:34.309] No commits in repo, skipping baseline capture
+[2026-06-10 12:32:34.325] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:32:34.342] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 12:33:22.950] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:33:22.951] Processing: hook_event=Stop, tool=
+[2026-06-10 12:33:22.991] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:33:22.991] Stop hook: empty review set
+[2026-06-10 12:33:40.820] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:33:40.821] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 12:33:40.856] No commits in repo, skipping baseline capture
+[2026-06-10 12:33:40.873] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:33:40.892] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 12:34:21.740] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:34:21.740] Processing: hook_event=Stop, tool=
+[2026-06-10 12:34:21.779] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:34:21.779] Stop hook: empty review set
+[2026-06-10 12:35:56.679] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:35:56.679] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 12:35:56.718] No commits in repo, skipping baseline capture
+[2026-06-10 12:35:56.753] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:35:56.772] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 12:36:54.006] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:36:54.007] Processing: hook_event=Stop, tool=
+[2026-06-10 12:36:54.048] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:36:54.049] Stop hook: empty review set
+[2026-06-10 12:38:01.378] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:38:01.378] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 12:38:01.418] No commits in repo, skipping baseline capture
+[2026-06-10 12:38:01.434] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:38:01.452] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 12:56:14.287] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:56:14.287] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 12:57:02.518] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:57:02.519] Processing: hook_event=Stop, tool=
+[2026-06-10 12:57:02.597] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:57:02.597] Stop hook: empty review set
+[2026-06-10 12:59:33.178] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 12:59:33.178] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 12:59:33.221] No commits in repo, skipping baseline capture
+[2026-06-10 12:59:33.239] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 12:59:33.255] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 13:03:04.273] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:03:04.273] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-10 13:04:22.649] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:04:22.649] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:04:22.649] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:04:22.649] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:04:22.649] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:04:22.650] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:04:22.650] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:04:22.650] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:04:22.650] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:04:22.650] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:04:33.954] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:04:33.954] Processing: hook_event=Stop, tool=
+[2026-06-10 13:04:33.995] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 13:04:33.996] Stop hook: empty review set
+[2026-06-10 13:18:56.439] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:18:56.440] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 13:18:56.488] No commits in repo, skipping baseline capture
+[2026-06-10 13:18:56.504] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 13:18:56.522] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 13:20:19.140] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:20:19.140] Processing: hook_event=Stop, tool=
+[2026-06-10 13:20:19.183] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 13:20:19.183] Stop hook: empty review set
+[2026-06-10 13:24:26.907] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:24:26.907] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 13:24:26.947] No commits in repo, skipping baseline capture
+[2026-06-10 13:24:26.963] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 13:24:26.982] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 13:31:46.353] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:31:46.353] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 13:35:02.329] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:35:02.330] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-10 13:36:12.627] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:36:12.627] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:36:12.627] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:36:12.627] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:36:12.628] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:36:12.627] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:36:12.628] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:36:12.628] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:36:12.628] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:36:12.628] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 13:36:24.229] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:36:24.229] Processing: hook_event=Stop, tool=
+[2026-06-10 13:36:24.276] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 13:36:24.276] Stop hook: empty review set
+[2026-06-10 13:56:16.713] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 13:56:16.713] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 13:56:16.769] No commits in repo, skipping baseline capture
+[2026-06-10 13:56:16.783] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 13:56:16.809] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 14:28:48.050] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 14:28:48.050] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 14:28:48.050] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 14:28:48.050] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 14:28:48.050] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 14:28:48.051] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 14:28:48.051] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 14:28:48.051] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 14:28:48.051] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 14:28:48.052] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 14:29:09.032] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 14:29:09.032] Processing: hook_event=Stop, tool=
+[2026-06-10 14:29:09.079] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 14:29:09.079] Stop hook: empty review set
+[2026-06-10 14:59:45.188] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 14:59:45.190] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 14:59:45.243] No commits in repo, skipping baseline capture
+[2026-06-10 14:59:45.260] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 14:59:45.278] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 15:07:32.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:07:32.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:07:32.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:07:32.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:07:32.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:07:32.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:07:32.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:07:32.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:07:32.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:07:32.621] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:08:48.383] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:08:48.384] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 15:08:48.442] No commits in repo, skipping baseline capture
+[2026-06-10 15:08:48.458] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:08:48.475] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 15:16:45.575] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:16:45.576] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 15:16:45.615] No commits in repo, skipping baseline capture
+[2026-06-10 15:16:45.631] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:16:45.655] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 15:16:59.242] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:16:59.243] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 15:16:59.273] No commits in repo, skipping baseline capture
+[2026-06-10 15:16:59.288] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:16:59.303] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 15:18:29.507] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:18:29.507] Processing: hook_event=Stop, tool=
+[2026-06-10 15:18:29.550] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:18:29.550] Stop hook: empty review set
+[2026-06-10 15:19:52.268] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:19:52.268] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 15:19:52.312] No commits in repo, skipping baseline capture
+[2026-06-10 15:19:52.327] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:19:52.344] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 15:21:52.486] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:21:52.486] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:21:52.486] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:21:52.486] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:21:52.486] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:21:52.487] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:21:52.487] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:21:52.487] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:21:52.487] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:21:52.487] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 15:24:13.233] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:24:13.234] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-10 15:25:32.950] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:25:32.951] Processing: hook_event=Stop, tool=
+[2026-06-10 15:25:33.002] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:25:33.002] Stop hook: empty review set
+[2026-06-10 15:25:47.378] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:25:47.378] Processing: hook_event=Stop, tool=
+[2026-06-10 15:25:47.418] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:25:47.418] Stop hook: empty review set
+[2026-06-10 15:46:02.197] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:46:02.198] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 15:46:02.247] No commits in repo, skipping baseline capture
+[2026-06-10 15:46:02.262] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:46:02.284] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 15:48:07.996] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:48:07.996] Processing: hook_event=Stop, tool=
+[2026-06-10 15:48:08.035] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:48:08.036] Stop hook: empty review set
+[2026-06-10 15:48:38.707] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:48:38.707] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 15:48:38.741] No commits in repo, skipping baseline capture
+[2026-06-10 15:48:38.756] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:48:38.773] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 15:49:44.096] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:49:44.096] Processing: hook_event=Stop, tool=
+[2026-06-10 15:49:44.138] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:49:44.138] Stop hook: empty review set
+[2026-06-10 15:53:41.819] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 15:53:41.820] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 15:53:41.865] No commits in repo, skipping baseline capture
+[2026-06-10 15:53:41.881] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 15:53:41.897] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 16:01:49.068] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:01:49.069] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 16:02:23.053] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:02:23.054] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 16:02:52.027] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:02:52.027] Processing: hook_event=Stop, tool=
+[2026-06-10 16:02:52.076] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 16:02:52.076] Stop hook: empty review set
+[2026-06-10 16:06:18.048] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:06:18.048] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 16:06:18.110] No commits in repo, skipping baseline capture
+[2026-06-10 16:06:18.126] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 16:06:18.142] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 16:09:40.358] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:09:40.358] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 16:09:43.208] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:09:43.209] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 16:42:25.637] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:42:25.638] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 16:42:57.127] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:42:57.127] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:42:57.127] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:42:57.127] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:42:57.127] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:42:57.128] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:42:57.128] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:42:57.128] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:42:57.128] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:42:57.128] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:50:06.304] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:50:06.304] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 16:50:06.351] No commits in repo, skipping baseline capture
+[2026-06-10 16:50:06.366] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 16:50:06.388] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 16:54:39.576] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:54:39.576] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:54:39.576] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:54:39.576] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:54:39.576] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:54:39.576] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:54:39.576] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:54:39.576] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:54:39.576] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:54:39.577] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 16:57:54.781] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 16:57:54.782] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 16:57:54.827] No commits in repo, skipping baseline capture
+[2026-06-10 16:57:54.842] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 16:57:54.862] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 17:13:19.749] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:13:19.750] Processing: hook_event=Stop, tool=
+[2026-06-10 17:13:19.797] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 17:13:19.797] Stop hook: empty review set
+[2026-06-10 17:16:47.161] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:16:47.162] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 17:16:47.202] No commits in repo, skipping baseline capture
+[2026-06-10 17:16:47.217] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 17:16:47.234] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 17:18:34.487] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:18:34.488] Processing: hook_event=Stop, tool=
+[2026-06-10 17:18:34.533] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 17:18:34.533] Stop hook: empty review set
+[2026-06-10 17:24:07.172] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:24:07.173] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 17:24:07.214] No commits in repo, skipping baseline capture
+[2026-06-10 17:24:07.230] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 17:24:07.247] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 17:26:56.273] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:26:56.273] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:26:56.273] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:26:56.273] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:26:56.273] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:26:56.274] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:26:56.274] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:26:56.274] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:26:56.274] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:26:56.274] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:32:33.042] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:32:33.043] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 17:33:03.355] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:33:03.355] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 17:33:35.465] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:33:35.465] Processing: hook_event=Stop, tool=
+[2026-06-10 17:33:35.514] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 17:33:35.514] Stop hook: empty review set
+[2026-06-10 17:35:51.012] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:35:51.013] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 17:35:51.043] No commits in repo, skipping baseline capture
+[2026-06-10 17:35:51.057] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 17:35:51.078] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 17:38:53.332] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:38:53.332] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:38:53.332] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:38:53.332] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:38:53.332] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:38:53.333] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:38:53.333] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:38:53.333] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:38:53.333] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:38:53.333] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:40:31.087] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:40:31.087] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:40:31.087] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:40:31.087] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:40:31.087] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:40:31.088] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:40:31.088] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:40:31.088] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:40:31.088] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:40:31.088] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:41:13.035] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:41:13.035] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:41:13.035] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:41:13.035] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:41:13.035] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:41:13.036] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:41:13.036] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:41:13.036] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:41:13.036] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:41:13.036] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:56.619] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:56.619] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:56.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:56.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:56.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:56.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:56.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:56.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:56.620] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:56.620] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:58.309] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:58.310] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:58.310] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:58.310] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:58.310] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:47:58.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:58.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:58.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:58.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:47:58.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:49:31.975] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:49:31.975] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:49:31.975] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:49:31.975] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:49:31.975] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:49:31.976] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:49:31.976] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:49:31.976] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:49:31.976] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:49:31.976] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:51:53.299] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:51:53.300] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:51:53.300] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:51:53.300] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:51:53.300] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:51:53.300] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:51:53.300] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:51:53.301] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:51:53.301] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:51:53.301] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:20.652] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:20.652] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:20.652] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:20.652] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:20.652] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:20.653] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:20.653] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:20.653] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:20.653] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:20.653] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:47.866] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:47.866] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:47.866] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:47.866] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:47.867] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:52:47.867] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:47.867] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:47.867] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:47.867] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:52:47.867] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:11.345] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:11.345] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:11.345] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:11.345] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:11.345] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:11.345] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:11.345] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:11.345] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:11.345] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:11.345] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:46.164] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:46.164] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:46.164] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:46.165] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:46.165] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:53:46.165] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:46.165] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:46.165] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:46.165] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:53:46.166] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:55:06.447] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:55:06.447] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:55:06.447] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:55:06.447] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:55:06.447] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 17:55:06.447] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:55:06.447] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:55:06.447] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:55:06.447] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 17:55:06.447] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:08:51.387] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:08:51.389] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 18:08:51.438] No commits in repo, skipping baseline capture
+[2026-06-10 18:08:51.454] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 18:08:51.477] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 18:10:18.124] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:18.124] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:18.124] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:18.124] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:18.124] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:18.124] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:18.124] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:18.124] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:18.124] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:18.124] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:31.510] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:31.510] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:31.510] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:31.510] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:31.510] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:10:31.511] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:31.511] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:31.511] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:31.511] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:10:31.511] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:22:30.396] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:22:30.396] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 18:22:30.441] No commits in repo, skipping baseline capture
+[2026-06-10 18:22:30.455] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 18:22:30.472] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 18:24:04.136] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:24:04.136] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:24:04.136] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:24:04.136] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:24:04.136] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:24:04.137] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:24:04.137] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:24:04.137] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:24:04.137] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:24:04.137] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:47:57.719] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:47:57.719] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:47:57.719] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:47:57.719] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:47:57.719] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:47:57.719] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:47:57.719] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:47:57.719] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:47:57.719] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:47:57.720] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:48:49.388] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:48:49.388] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:48:49.388] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:48:49.388] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:48:49.388] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 18:48:49.389] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:48:49.389] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:48:49.389] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:48:49.389] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 18:48:49.389] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 19:01:18.458] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:01:18.458] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 19:01:18.504] No commits in repo, skipping baseline capture
+[2026-06-10 19:01:18.518] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 19:01:18.534] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 19:03:20.277] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:03:20.277] Processing: hook_event=Stop, tool=
+[2026-06-10 19:03:20.326] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 19:03:20.326] Stop hook: empty review set
+[2026-06-10 19:07:17.612] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:07:17.612] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 19:07:17.653] No commits in repo, skipping baseline capture
+[2026-06-10 19:07:17.669] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 19:07:17.686] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 19:12:12.740] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:12:12.740] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 19:12:12.784] No commits in repo, skipping baseline capture
+[2026-06-10 19:12:12.799] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 19:12:12.816] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 19:13:19.770] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:13:19.770] Processing: hook_event=Stop, tool=
+[2026-06-10 19:13:19.814] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 19:13:19.815] Stop hook: empty review set
+[2026-06-10 19:16:13.433] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:16:13.433] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-10 19:16:13.479] No commits in repo, skipping baseline capture
+[2026-06-10 19:16:13.494] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 19:16:13.521] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-10 19:16:57.150] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:16:57.150] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:16:57.150] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:16:57.150] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:16:57.150] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:16:57.150] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 19:16:57.150] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 19:16:57.151] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 19:16:57.151] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 19:16:57.152] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-10 19:22:38.756] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:22:38.757] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-10 19:23:09.106] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-10 19:23:09.106] Processing: hook_event=Stop, tool=
+[2026-06-10 19:23:09.153] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-10 19:23:09.153] Stop hook: empty review set
+[2026-06-11 10:17:59.091] Hook called with args: ['/Users/yury_shubianok/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.3/hooks/security_reminder_hook.py']
+[2026-06-11 10:17:59.092] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-11 10:17:59.131] No commits in repo, skipping baseline capture
+[2026-06-11 10:17:59.146] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-11 10:17:59.164] Failed to capture git baseline (cwd='/Users/yury_shubianok/core-ai') — not a git repo, or git invocation failed (check log entries above)
