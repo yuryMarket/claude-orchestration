@@ -1,5 +1,5 @@
 # Compact Recovery Context
-<!-- Generated: 2026-06-10T14:27:55Z | trigger: auto -->
+<!-- Generated: 2026-06-11T13:20:13Z | trigger: manual -->
 
 ## Git состояние
 
@@ -43,21 +43,18 @@ Research:
 ## Ключевые решения из разговора
 
 ### Решения и ключевые фразы:
-- Сверка с ground truth (я прогнал сам, не через интерпретацию агентов) — и она **опровергла** последний вердикт суб-агента. Важно.
+- Идея хорошая — она DRY и закрывает дыру «новые приложения забудут про фикс». И её **можно сделать без CR**, но с одним жёстким условием.
 
-## Противоречие разрешено: templates НЕ удалены
+**Ключевое условие (иначе прилетит prod + CR):** это должен быть **новый отдельный констракт**, а **не** правка общего `kubePodDisruptionBudget.ts`. Общий оставля...
+- Не гоняюсь за косметическим markdown-lint в плане (это пред-существующие предупреждения от генерации — на суть не влияют). Артефакты готовы.
 
-Все 7 instance-templates, на которые ссылаются MIG, **существуют** (проверил `instance-templates list` против ссылок каж...
-- Короткий ответ: **да, ноды можно догнать до gke.2190000 ДО правки PDB-конструкта** — конструкт не предусловие апгрейда. Но есть *другое* предусловие: **те самые 22 блокирующих PDB надо расчистить перед апгрейдом**, иначе drain снова застрянет, как 28.05.
+# 🚩 Сигнал: все артефакты COR1-349 обновлены и готовы
 
-## Почему 22 PDB всё равно блокируют (даже с...
-- # 🚩 Сигнал: все артефакты по COR1-349 готовы
+## Твои решения учтены
+- **#1** — Трек 1 → **3 PR** (PR-1 core-ai-dev 42 · PR-2 merch+hr-systems+stores...
+- Идея хорошая — она DRY и закрывает дыру «новые приложения забудут про фикс». И её **можно сделать без CR**, но с одним жёстким условием.
 
-## Прогресс: COR1-349
-| # | Этап | Статус | Артефакт |
-|---|------|--------|----------|
-| 1 | PRD | ✅ | [COR1-349.prd.md](.claude/docs/prd/COR1-349.prd.md) — `PRD_READY` |
-| 2 | Исследование | ✅ | `.claude/docs/{research,investigations}/COR1-341-*.md` (1...
+**Ключевое условие (иначе прилетит prod + CR):** это должен быть **новый отдельный констракт**, а **не** правка общего `kubePodDisruptionBudget.ts`. Общий оставля...
 - Не гоняюсь за косметическим markdown-lint в плане (это пред-существующие предупреждения от генерации — на суть не влияют). Артефакты готовы.
 
 # 🚩 Сигнал: все артефакты COR1-349 обновлены и готовы
@@ -69,20 +66,20 @@ Research:
 **Ключевое условие (иначе прилетит prod + CR):** это должен быть **новый отдельный констракт**, а **не** правка общего `kubePodDisruptionBudget.ts`. Общий оставля...
 
 ### Последние действия Claude (tool_use):
-- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
-- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
-- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
-- Edit: /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md
-- Agent
+- mcp__atlassian__jira_add_comment
+- mcp__atlassian__jira_add_comment
+- mcp__atlassian__jira_add_comment
+- ToolSearch
+- mcp__atlassian__jira_edit_comment
 
 ### Последние сообщения пользователя:
-- === now === 13:46:44 === op progress === RUNNING	Updating e2-standard-8, done with 20 out of 29 nodes (69.0%): 1 being processed, 4 succeeded === прогресс-таймлайн (poll, последние 6) === 13:37:44 | R...
-- я хочу убедиться, что GKE полностью сам сможет провести апгрейд и ничего не зависит, если мы применим наши текущие конфигурации. Поэтому пусть все идет само, ничего не форси.
-- давай пока продолжим работу по триггеру, передеплоя PDB во всех остальных приложениях. Напоминаю, что в рамках этого пиара мы триггернули и передеплоили те PDB, которые нас блокировали, но также нам н...
-- === всего np app.ts с PDB-хелпером KubePodDisruptionBudget ===      104 === уже тронуты в PR-1 (маркер-комментарий) ===       19  === ОСТАВШИЕСЯ — по командам (team) ===    5 blinds    4 com   29 core...
-- Your questions have been answered: "Как сгруппировать ~80 оставшихся касаний app.ts в PR для ленивой сходимости?"="4 PR по кластерам команд". You can now continue with these answers in mind.
-- 1	# COR1-349: Durable konnectivity fix — np PDB AlwaysAllow + Gatekeeper к fail-closed 2	 3	Status: TASKLIST_READY 4	Progress: Трек 1 / PR-1 #5681 открыт (реализация идёт) 5	Date: 2026-06-09 6	PRD: .c...
-- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
-- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
-- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
-- The file /Users/yury_shubianok/core-ai/.claude/docs/tasklist/COR1-349.md has been updated successfully. (file state is current in your context — no need to Read it back)
+- The file /Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/memory/cdk8s-pdb-alwaysallow-gotcha.md has been updated successfully. (file state is current in your context — no need to ...
+- нужно, чтобы ты добавил комментарии в текущую задачу COR1-349 1. В первом комментарии опиши всю цепочку событий и проблем, которые у нас возникают, начиная от блокирующих PDB, которые затем приводят к...
+- === np namespaces для 8 prod-coupled приложений === --- core-ai-dev/ir-mcp-server np-te-core-ai/np-te-core-ai-usce1/core-ai-dev/app.ts --- merch/doc-ingestion-chunk-processor np-te-core-ai/np-te-core-...
+- {"result":"{\n  \"id\": \"3994798\",\n  \"body\": \"Incident chain — why non-prod node-pool upgrades deadlocked\\nThe upgrade deadlock was the end of a chain of independent problems that compounded. I...
+- {"result":"{\n  \"id\": \"3994805\",\n  \"body\": \"PDB fix — centralizing AlwaysAllow  fleet convergence\\nRoot cause.\\ncdk8s-lib\\n's\\nKubePodDisruptionBudget.toJson()\\nre-runs the typed k8s 1.24...
+- {"result":"{\n  \"id\": \"3994824\",\n  \"body\": \"Apps not converged — prod-coupling (action needed)\\nThese 8 apps could\\nnot\\nbe included in the non-prod PDB convergence. In the repo layout thei...
+- {"result":"{\n  \"id\": \"3994836\",\n  \"body\": \"Gatekeeper (non-prod) — durable fix\\nPR #5742 (merged) — https://github.com/one-thd/core-ai-cdk8s/pull/5742 — hardens the non-prod gatekeeper valid...
+- {"result":"{\n  \"id\": \"3994845\",\n  \"body\": \"Verification — config, behavioral, and chaos tests\\nAll tests run on \\nnp-te-core-ai\\n after PR #5742 deployed.\\nTest A — live configuration (bo...
+- {"result":"{\n  \"id\": \"3994848\",\n  \"body\": \"Summary\\nProblem.\\n Non-prod node-pool upgrades could deadlock. Two independent eviction blockers compounded during an upgrade: (1) PodDisruptionB...
+- {"result":"{\n  \"id\": \"3994824\",\n  \"body\": \"Apps not converged — prod-coupling (action needed)\\nThese 8 apps could \\nnot\\n be included in the non-prod PDB convergence. In the repo layout th...
