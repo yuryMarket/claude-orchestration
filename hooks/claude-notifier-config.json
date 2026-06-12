@@ -15,5 +15,11 @@
     "level": "sound+popup",
     "sound": ""
   },
-  "soundVolume": 1
+  "subagentCompleted": {
+    "level": "off",
+    "sound": "Pop"
+  },
+  "soundVolume": 1,
+  "minTaskDurationThreshold": 0,
+  "suppressSubagentInteractions": true
 }

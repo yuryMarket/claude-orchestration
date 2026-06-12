@@ -1,6 +1,7 @@
 const fs = require("fs");
 const { execSync } = require("child_process");
 const { USE_WIN, IS_LINUX, PS_BIN } = require("./platform");
+const { isInsideCmux } = require("./cmux");
 
 function clampVolume(v) {
   if (typeof v !== "number" || !Number.isFinite(v)) return 1;
@@ -22,6 +23,9 @@ function clampVolume(v) {
  *   Media.SoundPlayer has no volume API.
  */
 function playSound(primaryPath, fallbackPath, volume = 1) {
+  // cmux posts its own banner for the same event; skip the sound to avoid
+  // double-notifying. See _lib/cmux.js.
+  if (isInsideCmux()) return;
   const soundPath =
     primaryPath && fs.existsSync(primaryPath) ? primaryPath : fallbackPath || primaryPath;
   if (!soundPath) return;
@@ -34,10 +38,13 @@ function playSound(primaryPath, fallbackPath, volume = 1) {
         { stdio: "ignore", timeout: 5000 }
       );
     } else if (IS_LINUX) {
-      // paplay --volume uses a 16-bit scale where 65536 = 100%.
+      // pw-play (PipeWire) / paplay (PulseAudio) decode .oga sounds; aplay is a
+      // raw ALSA/WAV player and renders .oga as static (#49), so it is a last
+      // resort. pw-play --volume is a 0.0–1.0+ linear factor; paplay --volume a
+      // 16-bit scale where 65536 = 100%.
       const paVolume = Math.round(v * 65536);
       execSync(
-        `paplay --volume=${paVolume} "${soundPath}" 2>/dev/null || aplay "${soundPath}" 2>/dev/null`,
+        `pw-play --volume=${v} "${soundPath}" 2>/dev/null || paplay --volume=${paVolume} "${soundPath}" 2>/dev/null || aplay "${soundPath}" 2>/dev/null`,
         { stdio: "ignore", timeout: 5000 }
       );
     } else {

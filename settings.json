@@ -650,13 +650,13 @@
         ]
       },
       {
-        "matcher": "AskUserQuestion",
         "hooks": [
           {
             "type": "command",
             "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-question.js\""
           }
-        ]
+        ],
+        "matcher": "AskUserQuestion"
       }
     ],
     "PreCompact": [
@@ -730,6 +730,16 @@
           {
             "type": "command",
             "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-prompt.js\""
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-subagent-stop.js\""
           }
         ]
       }
