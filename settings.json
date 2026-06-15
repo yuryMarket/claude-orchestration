@@ -748,5 +748,6 @@
   "enabledPlugins": {
     "security-guidance@claude-plugins-official": true
   },
-  "theme": "dark"
+  "theme": "dark",
+  "model": "opus[1m]"
 }
