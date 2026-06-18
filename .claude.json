@@ -781,6 +781,15 @@
   },
   "additionalModelCostsCache": {},
   "mcpServers": {
+    "terraform": {
+      "type": "stdio",
+      "command": "/Users/yury_shubianok/go/bin/terraform-mcp-server",
+      "args": ["stdio", "--toolsets=terraform"],
+      "env": {
+        "TFE_ADDRESS": "https://terraform.homedepot.com",
+        "TFE_TOKEN": "${TFE_TOKEN}"
+      }
+    },
     "context7": {
       "type": "stdio",
       "command": "npx",

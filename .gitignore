@@ -225,3 +225,22 @@ history.jsonl
 mcp-needs-auth-cache.json
 settings.local.json
 stats-cache.json
+
+# --- Claude Code runtime state (машинное состояние, регенерируется автоматически) ---
+# Сигналы сессии и PID-файлы нотификатора
+/hooks/claude-signal
+/hooks/claude-notifier-active.d/
+/hooks/claude-notifier-task-start/
+# Компакт-сводки сессий
+/compact-summary.md
+# security-guidance: логи, per-session состояние, локальный venv
+/security/log.txt
+/security/security_warnings_state_*.json
+/security/security_warnings_state_*.lock
+/security/.sdk_bootstrap_spawned
+/security/agent-sdk-venv/
+# Плагины: re-fetchable кэш и vendored marketplaces
+# (что установлено — фиксируют installed_plugins.json и known_marketplaces.json)
+/plugins/.last_inuse_sweep
+/plugins/cache/
+/plugins/marketplaces/
