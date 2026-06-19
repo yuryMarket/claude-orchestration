@@ -477,7 +477,13 @@
       "mcp__atlassian__jira_add_comment",
       "mcp__github__list_commits",
       "mcp__github__pull_request_read",
-      "mcp__github__push_files"
+      "mcp__github__push_files",
+      "mcp__terraform__get_apply_details",
+      "mcp__terraform__get_plan_details",
+      "mcp__terraform__get_plan_logs",
+      "Bash(F=\"/Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/60560d7c-315a-4294-9c2d-7b28f048c158/tool-results/mcp-terraform-get_plan_logs-1781788195388.txt\" *)",
+      "mcp__terraform__get_run_details",
+      "mcp__terraform__get_plan_json_output"
     ],
     "deny": [
       "Bash(rm -rf *)",
@@ -635,9 +641,11 @@
       "/Users/yury_shubianok/.claude/skills",
       "/Users/yury_shubianok/core-ai/.claude/docs",
       "/Users/yury_shubianok/.claude/hooks",
-      "/Users/yury_shubianok/core-ai/.claude/docs/research"
+      "/Users/yury_shubianok/core-ai/.claude/docs/research",
+      "/Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/60560d7c-315a-4294-9c2d-7b28f048c158/tool-results"
     ]
   },
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -650,13 +658,13 @@
         ]
       },
       {
+        "matcher": "AskUserQuestion",
         "hooks": [
           {
             "type": "command",
             "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-question.js\""
           }
-        ],
-        "matcher": "AskUserQuestion"
+        ]
       }
     ],
     "PreCompact": [
@@ -748,6 +756,5 @@
   "enabledPlugins": {
     "security-guidance@claude-plugins-official": true
   },
-  "theme": "dark",
-  "model": "opus[1m]"
+  "theme": "dark"
 }
