@@ -483,7 +483,16 @@
       "mcp__terraform__get_plan_logs",
       "Bash(F=\"/Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/60560d7c-315a-4294-9c2d-7b28f048c158/tool-results/mcp-terraform-get_plan_logs-1781788195388.txt\" *)",
       "mcp__terraform__get_run_details",
-      "mcp__terraform__get_plan_json_output"
+      "mcp__terraform__get_plan_json_output",
+      "mcp__github__list_tags",
+      "mcp__terraform__get_workspace_details",
+      "mcp__terraform__list_workspaces",
+      "mcp__github__get_me",
+      "mcp__github__list_branches",
+      "mcp__terraform__get_token_permissions",
+      "mcp__terraform__list_runs",
+      "mcp__terraform__get_apply_logs",
+      "mcp__terraform__list_terraform_orgs"
     ],
     "deny": [
       "Bash(rm -rf *)",
