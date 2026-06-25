@@ -21,5 +21,9 @@
   },
   "soundVolume": 1,
   "minTaskDurationThreshold": 0,
-  "suppressSubagentInteractions": true
+  "suppressSubagentInteractions": true,
+  "remoteAudio": {
+    "enabled": false,
+    "port": 47291
+  }
 }
