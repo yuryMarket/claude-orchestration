@@ -492,7 +492,8 @@
       "mcp__terraform__get_token_permissions",
       "mcp__terraform__list_runs",
       "mcp__terraform__get_apply_logs",
-      "mcp__terraform__list_terraform_orgs"
+      "mcp__terraform__list_terraform_orgs",
+      "mcp__atlassian__jira_update_issue"
     ],
     "deny": [
       "Bash(rm -rf *)",
