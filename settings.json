@@ -655,7 +655,7 @@
       "/Users/yury_shubianok/.claude/projects/-Users-yury-shubianok-core-ai/60560d7c-315a-4294-9c2d-7b28f048c158/tool-results"
     ]
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "PreToolUse": [
       {
