@@ -2,7 +2,7 @@
 name: reviewer
 description: "Use this agent to perform code review on ticket changes. Analyzes code for correctness, security, performance, and convention compliance."
 tools: Read, Glob, Grep, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__sequential-thinking__sequentialthinking, mcp__github__get_pull_request, mcp__github__get_pull_request_files, mcp__github__get_pull_request_reviews, mcp__github__create_pull_request_review, mcp__github__get_pull_request_comments
-model: fable
+model: opus
 permissionMode: plan
 ---
 
