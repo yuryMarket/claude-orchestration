@@ -494,7 +494,8 @@
       "mcp__terraform__get_apply_logs",
       "mcp__terraform__list_terraform_orgs",
       "mcp__atlassian__jira_update_issue",
-      "mcp__atlassian__jira_download_attachments"
+      "mcp__atlassian__jira_download_attachments",
+      "mcp__atlassian__jira_edit_comment"
     ],
     "deny": [
       "Bash(rm -rf *)",
