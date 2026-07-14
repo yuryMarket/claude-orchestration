@@ -3,6 +3,7 @@ name: validator
 description: "Use this agent to check quality gates status for a ticket in AIDD workflow."
 tools: Read, Glob, Grep
 model: haiku
+effort: low
 permissionMode: plan
 ---
 
