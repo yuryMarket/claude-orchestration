@@ -1,8 +1,4 @@
 {
-  "env": {
-    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
-    "CLAUDE_CODE_EFFORT_LEVEL": "max"
-  },
   "permissions": {
     "allow": [
       "WebSearch",
