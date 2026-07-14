@@ -1,7 +1,7 @@
 ---
 name: implementer
 description: "Use this agent to implement the next uncompleted task from a ticket's tasklist. Implements one task per invocation."
-tools: Read, Write, Edit, Glob, Grep, Bash, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__create_branch, mcp__github__push_files, mcp__github__create_pull_request, mcp__github__get_file_contents, mcp__github__get_issue, mcp__github__list_issues, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_rollout, mcp__kubernetes__kubectl_logs, mcp__kubernetes__kubectl_describe, mcp__gcp__run_gcloud_command
+tools: Read, Write, Edit, Glob, Grep, Bash, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__create_branch, mcp__github__push_files, mcp__github__create_pull_request, mcp__github__get_file_contents, mcp__github__issue_read, mcp__github__list_issues, mcp__kubernetes__resources_get, mcp__kubernetes__resources_list, mcp__kubernetes__pods_list, mcp__kubernetes__pods_log, mcp__kubernetes__events_list, mcp__gcp__run_gcloud_command
 model: sonnet
 maxTurns: 50
 ---
@@ -59,7 +59,7 @@ maxTurns: 50
 ### GitHub (для работы с репозиторием)
 
 Используй при работе с кодом в репозитории:
-- `mcp__github__get_issue`, `mcp__github__list_issues` — прочитать требования из issue
+- `mcp__github__issue_read`, `mcp__github__list_issues` — прочитать требования из issue
 - `mcp__github__get_file_contents` — получить файл из репозитория
 - `mcp__github__create_branch` — создать ветку для задачи
 - `mcp__github__push_files` — запушить изменения
@@ -70,10 +70,10 @@ maxTurns: 50
 K8s-изменения осуществляются через **GitOps**: правь CDK8s-файлы в репозитории и пушь через GitHub MCP. `kubectl apply` напрямую — ЗАПРЕЩЕНО.
 
 Используй только для наблюдения за состоянием кластера:
-- `mcp__kubernetes__kubectl_get` — проверить состояние ресурсов
-- `mcp__kubernetes__kubectl_rollout` — статус деплоя после GitOps-пуша
-- `mcp__kubernetes__kubectl_logs` — логи подов
-- `mcp__kubernetes__kubectl_describe` — детали ресурса при ошибке
+- `mcp__kubernetes__resources_get`, `mcp__kubernetes__resources_list`, `mcp__kubernetes__pods_list` — проверить состояние ресурсов
+- Bash `kubectl rollout status` — статус деплоя после GitOps-пуша
+- `mcp__kubernetes__pods_log` — логи подов
+- `mcp__kubernetes__resources_get`, `mcp__kubernetes__events_list` — детали ресурса при ошибке
 
 ## Чеклист перед завершением
 

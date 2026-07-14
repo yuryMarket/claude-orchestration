@@ -1,7 +1,7 @@
 ---
 name: deep-researcher
 description: "Используй этого агента для сбора, проверки и резюмирования информации по любой теме перед принятием решений о реализации. Обрабатывает техническое исследование, расследование проблем, оценку библиотек/API, поиск лучших практик и анализ документации. Собирает факты из множества источников (веб, документация Context7, Confluence, кодовая база) и создаёт структурированный исследовательский отчёт — без принятия решений и без модификации кода."
-tools: Read, Write, Grep, Glob, WebFetch, WebSearch, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__brave-search__brave_local_search, mcp__atlassian__confluence_search, mcp__atlassian__confluence_get_page, mcp__atlassian__confluence_get_page_children, mcp__atlassian__confluence_get_comments, mcp__atlassian__confluence_get_page_history, mcp__atlassian__confluence_get_labels, mcp__atlassian__confluence_download_content_attachments, mcp__sequential-thinking__sequentialthinking, mcp__github__search_repositories, mcp__github__search_code, mcp__github__search_issues, mcp__github__get_file_contents, mcp__github__get_issue, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_describe, mcp__kubernetes__kubectl_logs, mcp__kubernetes__explain_resource, mcp__grafana__list_dashboards, mcp__grafana__get_dashboard, mcp__grafana__search_dashboards, mcp__grafana__query_datasource, mcp__grafana__list_datasources, mcp__grafana__get_datasource, mcp__grafana__list_alert_rules, mcp__grafana__get_alert_rule, mcp__grafana__list_incidents, mcp__grafana__get_incident, mcp__gcp__run_gcloud_command
+tools: Read, Write, Grep, Glob, WebFetch, WebSearch, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__brave-search__brave_local_search, mcp__atlassian__confluence_search, mcp__atlassian__confluence_get_page, mcp__atlassian__confluence_get_page_children, mcp__atlassian__confluence_get_comments, mcp__atlassian__confluence_get_page_history, mcp__atlassian__confluence_get_labels, mcp__atlassian__confluence_download_content_attachments, mcp__sequential-thinking__sequentialthinking, mcp__github__search_repositories, mcp__github__search_code, mcp__github__search_issues, mcp__github__get_file_contents, mcp__github__issue_read, mcp__kubernetes__resources_get, mcp__kubernetes__resources_list, mcp__kubernetes__pods_list, mcp__kubernetes__events_list, mcp__kubernetes__pods_log, mcp__grafana__search_dashboards, mcp__grafana__get_dashboard_by_uid, mcp__grafana__get_dashboard_summary, mcp__grafana__query_prometheus, mcp__grafana__query_loki_logs, mcp__grafana__list_datasources, mcp__grafana__get_datasource, mcp__grafana__alerting_manage_rules, mcp__grafana__list_incidents, mcp__grafana__get_incident, mcp__gcp__run_gcloud_command
 model: opus
 ---
 
@@ -51,17 +51,16 @@ mcp__sequential-thinking__sequentialthinking({
 - `mcp__github__search_code` — найти примеры кода
 - `mcp__github__search_issues` — найти известные проблемы и их решения
 - `mcp__github__get_file_contents` — получить конкретный файл из репозитория
-- `mcp__github__get_issue` — подробности issue
+- `mcp__github__issue_read` — подробности issue
 
 Приоритет: используй после Fetch и Context7, если там не нашлось примеров.
 
 ### Kubernetes (для исследования конфигурации кластера)
 
 Используй когда исследуешь текущее состояние инфраструктуры:
-- `mcp__kubernetes__kubectl_get` — список ресурсов кластера
-- `mcp__kubernetes__kubectl_describe` — подробная информация о ресурсе
-- `mcp__kubernetes__kubectl_logs` — логи подов
-- `mcp__kubernetes__explain_resource` — документация по типу ресурса
+- `mcp__kubernetes__resources_list` — список ресурсов кластера
+- `mcp__kubernetes__resources_get` — подробная информация о ресурсе
+- `mcp__kubernetes__pods_log` — логи подов
 
 ### Context7 (ОБЯЗАТЕЛЬНО для исследования библиотек/фреймворков)
 

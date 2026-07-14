@@ -1,7 +1,7 @@
 ---
 name: qa-engineer
 description: "Use this agent to run QA checks, execute tests, and generate a QA report for a ticket."
-tools: Read, Glob, Grep, Bash, Write, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__get_pull_request_status, mcp__github__list_pull_requests, mcp__kubernetes__kubectl_get, mcp__kubernetes__kubectl_logs, mcp__kubernetes__kubectl_describe, mcp__kubernetes__kubectl_rollout, mcp__grafana__list_dashboards, mcp__grafana__get_dashboard, mcp__grafana__search_dashboards, mcp__grafana__list_alert_rules, mcp__grafana__get_alert_rule, mcp__gcp__run_gcloud_command
+tools: Read, Glob, Grep, Bash, Write, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__github__pull_request_read, mcp__github__list_pull_requests, mcp__kubernetes__resources_get, mcp__kubernetes__resources_list, mcp__kubernetes__pods_list, mcp__kubernetes__pods_log, mcp__kubernetes__events_list, mcp__grafana__search_dashboards, mcp__grafana__get_dashboard_by_uid, mcp__grafana__get_dashboard_summary, mcp__grafana__alerting_manage_rules, mcp__gcp__run_gcloud_command
 model: sonnet
 ---
 
@@ -74,16 +74,16 @@ model: sonnet
 ### GitHub (для проверки CI/CD статуса)
 
 Используй для проверки статуса проверок в PR:
-- `mcp__github__get_pull_request_status` — статус CI checks по PR
+- `mcp__github__pull_request_read` — статус CI checks по PR
 - `mcp__github__list_pull_requests` — список открытых PR для QA
 
 ### Kubernetes (для проверки деплоя)
 
 Используй при QA K8s-деплойментов:
-- `mcp__kubernetes__kubectl_get` — статус pods, deployments, services
-- `mcp__kubernetes__kubectl_logs` — логи подов для поиска ошибок
-- `mcp__kubernetes__kubectl_describe` — детали ресурса при сбое
-- `mcp__kubernetes__kubectl_rollout` — статус и история rollout
+- `mcp__kubernetes__resources_get`, `mcp__kubernetes__resources_list`, `mcp__kubernetes__pods_list` — статус pods, deployments, services
+- `mcp__kubernetes__pods_log` — логи подов для поиска ошибок
+- `mcp__kubernetes__resources_get`, `mcp__kubernetes__events_list` — детали ресурса при сбое
+- Bash `kubectl rollout status` — статус и история rollout
 
 ## Формат QA-отчёта
 

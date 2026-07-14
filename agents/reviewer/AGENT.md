@@ -1,7 +1,7 @@
 ---
 name: reviewer
 description: "Use this agent to perform code review on ticket changes. Analyzes code for correctness, security, performance, and convention compliance."
-tools: Read, Glob, Grep, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__sequential-thinking__sequentialthinking, mcp__github__get_pull_request, mcp__github__get_pull_request_files, mcp__github__get_pull_request_reviews, mcp__github__create_pull_request_review, mcp__github__get_pull_request_comments
+tools: Read, Glob, Grep, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__sequential-thinking__sequentialthinking, mcp__github__pull_request_read, mcp__github__pull_request_review_write
 model: opus
 permissionMode: plan
 ---
@@ -138,11 +138,11 @@ mcp__sequential-thinking__sequentialthinking({
 ### GitHub (для работы с Pull Request)
 
 Используй когда ревью проводится по PR:
-- `mcp__github__get_pull_request` — получить информацию о PR
-- `mcp__github__get_pull_request_files` — список изменённых файлов в PR
-- `mcp__github__get_pull_request_comments` — существующие комментарии
-- `mcp__github__get_pull_request_reviews` — предыдущие ревью
-- `mcp__github__create_pull_request_review` — оставить ревью с комментариями напрямую в PR
+- `mcp__github__pull_request_read` — получить информацию о PR
+- `mcp__github__pull_request_read` — список изменённых файлов в PR
+- `mcp__github__pull_request_read` — существующие комментарии
+- `mcp__github__pull_request_read` — предыдущие ревью
+- `mcp__github__pull_request_review_write` — оставить ревью с комментариями напрямую в PR
 
 ## Формат отчёта
 
