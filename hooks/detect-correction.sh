@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 # detect-correction.sh — Stop hook для обнаружения паттернов коррекции
 # Событие: Stop
-# Назначение: если пользователь скорректировал Claude И Claude делал Edit/Write —
-#             ставит флаг для запуска config-watcher анализа
+# Назначение: если пользователь ОТРИЦАЕТ оценку сделанного (в НАЧАЛЕ сообщения) И Claude делал
+#             Edit/Write — ставит флаг для запуска config-watcher анализа.
 # Exit 0 = продолжить нормально
 # {"ok": false} = попросить Claude продолжить (запустит config-watcher)
+#
+# Ужесточение (AIDD-003, 5.2): сигнал коррекции — ТОЛЬКО слова-отрицания оценки сделанного
+#   в НАЧАЛЕ сообщения (нет, / не так / неправильно / не то / wrong / not right / that's not /
+#   incorrect). Императивы (переделай/измени/исправь/redo/fix it/rework) сами по себе НЕ триггерят —
+#   учитываются лишь как УСИЛИТЕЛЬ после отрицания. Плюс rate-limit: не чаще 1 раза в 4 часа/сессию.
 
 set -euo pipefail
 
@@ -52,18 +57,33 @@ if [ -z "$LAST_USER_MSG" ]; then
   exit 0
 fi
 
-# Условие A: слова-коррекции в последнем сообщении пользователя
-CORRECTION_PATTERN='(нет[,\s]|не так|неправильно|переделай|измени|исправь|сделай по.другому|не то|wrong|redo|fix it|not right|that.s not|incorrect|rework)'
-CONDITION_A=false
-if echo "$LAST_USER_MSG" | grep -qiE "$CORRECTION_PATTERN"; then
-  CONDITION_A=true
+# --- Условие A: ОТРИЦАНИЕ оценки сделанного В НАЧАЛЕ сообщения (ОБЯЗАТЕЛЬНОЕ условие) -----------
+# Берём только начало сообщения: первую строку и ~первые 40 символов. Это и реализует «в начале»:
+# отрицание глубоко в длинном поручении («исправь баг ... там всё не так») НЕ считается коррекцией.
+HEAD_LINE="${LAST_USER_MSG%%$'\n'*}"
+HEAD="${HEAD_LINE:0:40}"
+
+# Якорь ^ с допуском ведущих пробелов/пунктуации (маркеры списков, кавычки, тире).
+# Кириллица: явный [Нн] на случай, если grep -i не сворачивает регистр в текущей локали.
+NEGATION_START='^[[:space:][:punct:]]*([Нн]ет,|[Нн]е так|[Нн]еправильно|[Нн]е то|wrong|not right|that.?s not|incorrect)'
+NEGATION_AT_START=false
+if printf '%s' "$HEAD" | grep -qiE "$NEGATION_START"; then
+  NEGATION_AT_START=true
 fi
 
-if [ "$CONDITION_A" = "false" ]; then
+# Нет отрицания в начале → это обычное поручение (в т.ч. «исправь баг в модуле X»), выходим.
+if [ "$NEGATION_AT_START" = "false" ]; then
   exit 0
 fi
 
-# Условие B: Claude вызывал Edit или Write
+# Императив — только УСИЛИТЕЛЬ после отрицания (сам по себе не триггерит). Нужен лишь для reason.
+IMPERATIVE_PATTERN='(переделай|измени|исправь|сделай по.другому|redo|fix it|rework)'
+AMPLIFIER=""
+if printf '%s' "$LAST_USER_MSG" | grep -qiE "$IMPERATIVE_PATTERN"; then
+  AMPLIFIER=" + императив"
+fi
+
+# --- Условие B: Claude вызывал Edit или Write -------------------------------------------------
 # Реальный формат: message.content[].type == "tool_use" и message.content[].name == "Edit"|"Write"
 CONDITION_B=false
 if jq -r 'select(.message.role == "assistant") | .message.content[]? | select(.type == "tool_use") | .name // ""' "$TRANSCRIPT_PATH" 2>/dev/null | grep -qE '^(Edit|Write)$'; then
@@ -81,7 +101,21 @@ if [ "$CONDITION_B" = "false" ]; then
   exit 0
 fi
 
-# Оба условия выполнены — ставим флаг коррекции
+# --- Rate-limit: не чаще 1 раза в 4 часа на сессию --------------------------------------------
+# Marker-файл в /tmp; если моложе 4ч (14400 c) — тихий exit 0 (не шумим config-watcher-ом).
+RATELIMIT_MARKER="/tmp/claude-correction-ratelimit-${SESSION_ID}"
+if [ -f "$RATELIMIT_MARKER" ]; then
+  now="$(date +%s 2>/dev/null || echo 0)"
+  mtime="$(stat -f %m "$RATELIMIT_MARKER" 2>/dev/null || stat -c %Y "$RATELIMIT_MARKER" 2>/dev/null || echo 0)"
+  age=$(( now - mtime ))
+  if [ "$age" -lt 14400 ]; then
+    exit 0
+  fi
+fi
+# Обновляем метку времени последнего срабатывания (идемпотентно).
+touch "$RATELIMIT_MARKER" 2>/dev/null || true
+
+# Оба условия выполнены и rate-limit пройден — ставим флаг коррекции.
 echo "$TRANSCRIPT_PATH" > "/tmp/claude-correction-flag-${SESSION_ID}"
 
 # Инициализируем курсор если ещё не существует
@@ -92,5 +126,5 @@ if [ ! -f "$CURSOR_FILE" ]; then
 fi
 
 # Возвращаем ok: false чтобы Claude запустил config-watcher
-echo '{"ok": false, "reason": "Обнаружена коррекция пользователя. Запускаю config-watcher для анализа."}'
+echo "{\"ok\": false, \"reason\": \"Обнаружена коррекция пользователя (отрицание в начале${AMPLIFIER}). Запускаю config-watcher для анализа.\"}"
 exit 0
