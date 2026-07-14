@@ -8,6 +8,23 @@
 
 ### Added
 
+- **AIDD-003**: MCP-сервер `context7` (user-scope, `~/.claude.json`, вне git) — установлен через
+  `claude mcp add --scope user --transport http context7 https://mcp.context7.com/mcp`.
+
+- **AIDD-003**: `~/.claude/rules/bash-discipline.md` — дисциплина Bash-вызовов: один шаг = один
+  вызов, абсолютные пути вместо `cd && cmd`, скрипты через `Write` в файл, не смешивать
+  allow/не-allow команды в одной строке.
+
+- **AIDD-003**: Секция `ask` в permissions (`settings.json`) — `terraform/tofu apply`,
+  `helm install/upgrade/uninstall/rollback`, `git push`, `docker run/exec/rm/rmi`,
+  `mcp github create_pull_request/push_files`, `terraform apply_run/create_run`.
+
+- **AIDD-003**: Хук `post-format.sh` (PostToolUse) — асинхронный автоформат
+  (ruff/prettier/terraform fmt), fail-open.
+
+- **AIDD-003**: Профили пауз AIDD `full`/`light` в `workflow.md`; правило «массивные выборки —
+  скрипт+CLI» добавлено в `deep-researcher`/`qa-engineer`.
+
 - **AIDD-002**: Новый helper `~/.claude/hooks/_lib/aidd-write-legacy.sh` — условная запись
   legacy-указателя `docs/.active_ticket`. Принимает аргументы `<cwd> <ticket>`. Пишет файл
   только если он пуст или уже содержит тот же тикет; если файл содержит тикет другой сессии —
@@ -51,6 +68,30 @@
   stderr источник тикета: `AIDD: ticket=<T> source=session:<S>` или `source=legacy`.
 
 ### Changed
+
+- **AIDD-003**: Имена MCP-инструментов синхронизированы с актуальными серверами в агентах
+  `qa-engineer`, `gitops-reader`, `implementer`, `reviewer`, `deep-researcher`, `analyst`:
+  `kubectl_*` → `pods_*`/`resources_*`/`events_*`; `get_pull_request*` → `pull_request_read`;
+  `create_pull_request_review` → `pull_request_review_write`; `list_dashboards`/`query_datasource`
+  → `search_dashboards`/`query_prometheus`/`query_loki_logs`; `get_issue` → `issue_read`.
+
+- **AIDD-003**: Permissions ужесточены: `gcloud/aws/az/gsutil` → read-only паттерны; из `allow`
+  убраны `rm/curl/wget/ssh/scp/kill/pkill/export`; `Write/Edit(~/**)` сужен до `~/docs/**`;
+  ~130 поимённых mcp-записей в allow заменены глобами; `mcp__kubernetes__*` — 14 read-литералов
+  и 5 мутаций перенесены в `deny` (закрыт обход kubectl-щита); `github/atlassian/grafana` —
+  read-глобы, `merge_pull_request` → `ask`.
+
+- **AIDD-003**: `~/.claude/hooks/detect-correction.sh` ужесточён (отрицание в начале сообщения,
+  императивы не триггерят, rate-limit 4ч) + regression-тесты; дополнительные guard'ы добавлены
+  по итогам ревью.
+
+- **AIDD-003**: `/implement` выровнен с `workflow.md` Этап 5 (батч-режим); 9 скиллов переведены
+  на per-session резолюцию тикета (`sessions/aidd/<sid>.json`, legacy fallback); `routing.md` —
+  явный вызов скилла этапа теперь считается решением пользователя о режиме; `CLAUDE.md` —
+  удалены 2 дублирующие таблицы субагентов.
+
+- **AIDD-003**: Per-agent effort levels — `low` для `quick-lookup`/`gitops-reader`/`validator`,
+  `high` для `planner`/`reviewer`/`analyst`/`deep-researcher` (модели без изменений).
 
 - **AIDD-002**: `~/.claude/hooks/_lib/aidd-ticket.sh` — удалён уровень 3 из `resolve_ticket`
   (`<cwd>/.claude/docs/.active_ticket`). Цепочка стала двухуровневой: per-session →
@@ -100,8 +141,30 @@
 
 ### Removed
 
+- **AIDD-003**: 24 мёртвые mcp-записи удалены из allow-списка permissions.
+
+- **AIDD-003**: `~/.claude/hooks/gate-workflow.sh` удалён (+ файл `.gate-disabled`, тест,
+  регистрация PreToolUse) — заменён связкой `detect-correction.sh` + `post-format.sh`.
+
+- **AIDD-003**: Env `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` (no-op на Fable 5) и
+  `CLAUDE_CODE_EFFORT_LEVEL=max` удалены.
+
+- **AIDD-003**: Удалён `settings.json.bak-kubectl-perms`.
+
 - **AIDD-002**: Удалён осиротевший файл `core-ai/.claude/docs/.active_ticket` (содержал
   устаревший указатель `COR1-335`; уровень 3 больше не читается ни одним из хуков).
+
+### Notes (AIDD-003)
+
+- Sandbox вариант A (`excludedCommands`) включался и был отключён после провального
+  smoke-теста: excludedCommands не применяются к живой сессии, DNS/keychain ломали
+  `git push`/`gh`/`ssh`. Зафиксирован откат к варианту B; см.
+  `~/docs/adr/AIDD-003-permissions-sandbox-model.md`. Повторное включение —
+  отдельным заходом с перезапуском сессии.
+- kubectl deny-блок не изменён в пакете permissions (PR #39); расширен read/mutation
+  литералами по итогам ревью (PR #45).
+- Артефакты тикета: `~/docs/{prd,plan,tasklist}/AIDD-003*`,
+  `~/docs/reports/{review,qa}/AIDD-003.md`, `~/docs/adr/AIDD-003-permissions-sandbox-model.md`.
 
 ### Notes (migration — AIDD-002)
 
