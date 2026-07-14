@@ -13,12 +13,14 @@ allowed-tools: Read, Grep, Glob, Write, WebSearch, WebFetch, Agent
 ## Входные данные
 
 - `$ARGUMENTS` — ticket ID
-- Если не передан — прочитай из `docs/.active_ticket`
+- Если не передан — резолюция активного тикета:
+  1. Primary: session_id из строки контекста `AIDD session_id: <S>` → файл `~/.claude/sessions/aidd/<S>.json`, поле `ticket`
+  2. Fallback (legacy): содержимое `docs/.active_ticket`
 
 ## Алгоритм
 
 1. Определение тикета:
-   - Ticket: `$0` или содержимое `docs/.active_ticket`
+   - Ticket: `$0`; если не передан — резолюция активного тикета (см. «Входные данные»): primary `~/.claude/sessions/aidd/<S>.json` → fallback `docs/.active_ticket`
    - Если тикет не определён — попроси пользователя указать
 
 2. Проверка gate:
