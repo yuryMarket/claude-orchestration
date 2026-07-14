@@ -530,15 +530,6 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/yury_shubianok/.claude/hooks/gate-workflow.sh"
-          }
-        ]
-      },
-      {
         "matcher": "AskUserQuestion",
         "hooks": [
           {
@@ -629,6 +620,18 @@
           {
             "type": "command",
             "command": "node \"/Users/yury_shubianok/.claude/hooks/claude-notifier-on-subagent-stop.js\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/yury_shubianok/.claude/hooks/post-format.sh",
+            "async": true
           }
         ]
       }
