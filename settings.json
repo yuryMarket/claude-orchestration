@@ -495,7 +495,10 @@
       "mcp__terraform__list_terraform_orgs",
       "mcp__atlassian__jira_update_issue",
       "mcp__atlassian__jira_download_attachments",
-      "mcp__atlassian__jira_edit_comment"
+      "mcp__atlassian__jira_edit_comment",
+      "mcp__terraform__list_workspace_variables",
+      "mcp__terraform__list_variable_sets",
+      "Bash(pgrep -qf 'np-te-terraform')"
     ],
     "deny": [
       "Bash(rm -rf *)",
