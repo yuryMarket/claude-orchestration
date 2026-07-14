@@ -11,10 +11,15 @@
 #   incorrect). Императивы (переделай/измени/исправь/redo/fix it/rework) сами по себе НЕ триггерят —
 #   учитываются лишь как УСИЛИТЕЛЬ после отрицания. Плюс rate-limit: не чаще 1 раза в 4 часа/сессию.
 
+# Fail-open (AIDD-003, review-fix): Stop-хук НЕ блокирует ответ Claude и НИКОГДА не должен падать.
+# `set -euo pipefail` оставлен СОЗНАТЕЛЬНО и безопасен ТОЛЬКО потому, что ВСЕ подстановки ниже
+# защищены (`|| echo ...` / `|| true`). Без защиты битая строка транскрипта уронила бы `jq`,
+# pipefail пробросил бы non-zero через `| tail`, и set -e аварийно завершил бы хук (нарушив
+# fail-open). Тот же подход в session-start.sh: set -euo pipefail + все подстановки защищены.
 set -euo pipefail
 
-# Читаем stdin
-INPUT="$(cat)"
+# Читаем stdin (пустой/битый stdin — норма: подстановка защищена, INPUT станет пустым).
+INPUT="$(cat 2>/dev/null || true)"
 
 # Защита от бесконечного цикла
 STOP_HOOK_ACTIVE="$(echo "$INPUT" | jq -r '.stop_hook_active // false' 2>/dev/null || echo 'false')"
@@ -44,13 +49,16 @@ if ! command -v jq &>/dev/null; then
   exit 0
 fi
 
-# Находим последнее сообщение пользователя
-# Реальный формат транскрипта: {message: {role: "user", content: [...]}, type: "user"}
-LAST_USER_MSG="$(jq -r 'select(.message.role == "user") | .message.content | if type == "array" then .[].text // "" else . end' "$TRANSCRIPT_PATH" 2>/dev/null | tail -1)"
+# Находим последнее сообщение пользователя.
+# Реальный формат транскрипта: {message: {role: "user", content: [...]}, type: "user"}.
+# `|| echo ""` ОБЯЗАТЕЛЕН при set -euo pipefail: на битой строке транскрипта jq выходит с non-zero,
+# pipefail пробрасывает этот код через `| tail`, и без защиты set -e аварийно завершил бы хук.
+# С защитой подстановка отдаёт пустую строку → срабатывает обычный тихий exit 0 ниже (fail-open).
+LAST_USER_MSG="$(jq -r 'select(.message.role == "user") | .message.content | if type == "array" then .[].text // "" else . end' "$TRANSCRIPT_PATH" 2>/dev/null | tail -1 || echo "")"
 
-# Фолбэк на плоский формат {role: "user", content: ...}
+# Фолбэк на плоский формат {role: "user", content: ...} (та же защита `|| echo ""`, тот же мотив).
 if [ -z "$LAST_USER_MSG" ]; then
-  LAST_USER_MSG="$(jq -r 'select(.role == "user") | .content // ""' "$TRANSCRIPT_PATH" 2>/dev/null | tail -1)"
+  LAST_USER_MSG="$(jq -r 'select(.role == "user") | .content // ""' "$TRANSCRIPT_PATH" 2>/dev/null | tail -1 || echo "")"
 fi
 
 if [ -z "$LAST_USER_MSG" ]; then
