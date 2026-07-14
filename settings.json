@@ -503,11 +503,6 @@
       "Bash(k auth reconcile *)",
       "Bash(k * auth reconcile *)"
     ],
-    "additionalDirectories": [
-      "/Users/yury_shubianok/.claude",
-      "/Users/yury_shubianok/.claude/skills",
-      "/Users/yury_shubianok/.claude/hooks"
-    ],
     "ask": [
       "Bash(terraform apply *)",
       "Bash(tofu apply *)",
@@ -524,6 +519,11 @@
       "mcp__github__push_files",
       "mcp__terraform__apply_run",
       "mcp__terraform__create_run"
+    ],
+    "additionalDirectories": [
+      "/Users/yury_shubianok/.claude",
+      "/Users/yury_shubianok/.claude/skills",
+      "/Users/yury_shubianok/.claude/hooks"
     ]
   },
   "model": "claude-fable-5[1m]",
