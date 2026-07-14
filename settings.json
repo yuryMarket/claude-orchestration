@@ -641,39 +641,5 @@
   "enabledPlugins": {
     "security-guidance@claude-plugins-official": true
   },
-  "theme": "dark",
-  "sandbox": {
-    "enabled": true,
-    "excludedCommands": [
-      "git",
-      "gh",
-      "docker",
-      "gcloud",
-      "aws",
-      "az",
-      "kubectl",
-      "k",
-      "helm",
-      "terraform",
-      "tofu",
-      "npm",
-      "npx",
-      "pnpm",
-      "yarn",
-      "pip",
-      "pip3",
-      "uv",
-      "poetry",
-      "curl",
-      "wget",
-      "ssh",
-      "scp"
-    ],
-    "network": {
-      "allowUnixSockets": [],
-      "allowAllUnixSockets": false,
-      "allowLocalBinding": false,
-      "allowedDomains": []
-    }
-  }
+  "theme": "dark"
 }
