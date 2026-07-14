@@ -1,7 +1,7 @@
 ---
 name: analyst
 description: "Use this agent to create or update a PRD (Product Requirements Document) for a feature ticket in AIDD workflow."
-tools: Read, Glob, Grep, Write, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__sequential-thinking__sequentialthinking, mcp__github__search_issues, mcp__github__list_issues, mcp__github__get_issue, mcp__atlassian__confluence_search, mcp__atlassian__confluence_get_page, mcp__atlassian__confluence_get_page_children
+tools: Read, Glob, Grep, Write, mcp__fetch__fetch, mcp__context7__resolve-library-id, mcp__context7__query-docs, mcp__brave-search__brave_web_search, mcp__sequential-thinking__sequentialthinking, mcp__github__search_issues, mcp__github__list_issues, mcp__github__issue_read, mcp__atlassian__confluence_search, mcp__atlassian__confluence_get_page, mcp__atlassian__confluence_get_page_children
 model: opus
 effort: high
 ---
@@ -71,7 +71,7 @@ mcp__sequential-thinking__sequentialthinking({
 Используй для изучения реальных пользовательских запросов и известных проблем:
 - `mcp__github__search_issues` — найти похожие issues/feature requests
 - `mcp__github__list_issues` — список открытых issues проекта
-- `mcp__github__get_issue` — подробности конкретного issue
+- `mcp__github__issue_read` — подробности конкретного issue
 
 ### Atlassian Confluence (для внутренней документации требований)
 
