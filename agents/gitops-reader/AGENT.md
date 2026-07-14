@@ -1,7 +1,7 @@
 ---
 name: gitops-reader
 description: "Use this agent when you need to collect and aggregate information from a GitHub PR in GitOps processes: Terraform plan/apply results from PR comments (TFE, Atlantis, GitHub Actions), GitHub Actions workflow run statuses, and CI check results. Invoke when user asks 'get info about Terraform plan in PR', 'what happened in Terraform apply', 'check GitHub Actions pipeline for this PR', 'почему упал terraform plan в PR #N', 'разберись что за ошибки в этом PR', 'посмотри apply в PR', 'найди PR который вызвал ошибки', 'в этом PR видны ошибки — разберись'. Returns a structured inline summary — no files written."
-tools: Read, Bash, mcp__fetch__fetch, mcp__github__get_pull_request, mcp__github__get_pull_request_comments, mcp__github__get_pull_request_reviews, mcp__github__get_pull_request_status, mcp__github__list_pull_requests, mcp__github__get_pull_request_files, mcp__github__list_workflow_runs, mcp__github__get_workflow_run, mcp__github__list_jobs_for_workflow_run, mcp__github__download_workflow_run_logs, mcp__gcp__run_gcloud_command
+tools: Read, Bash, mcp__fetch__fetch, mcp__github__pull_request_read, mcp__github__list_pull_requests, mcp__gcp__run_gcloud_command
 model: haiku
 ---
 
@@ -21,7 +21,7 @@ model: haiku
 
 ### Приоритет 1: mcp__github__* (если доступны)
 
-Пробуй вызвать `mcp__github__get_pull_request` для проверки доступности.
+Пробуй вызвать `mcp__github__pull_request_read` для проверки доступности.
 
 ### Приоритет 2: gh CLI через Bash (fallback)
 
@@ -61,15 +61,15 @@ for c in data:
 
 ### Шаг 1: Базовая информация о PR
 
-Вызови `mcp__github__get_pull_request` с owner, repo, pull_number.
+Вызови `mcp__github__pull_request_read` с owner, repo, pull_number.
 
 Извлеки: title, state, head branch, base branch, merged status, author.
 
 ### Шаг 2: Комментарии PR
 
 Вызови параллельно:
-- `mcp__github__get_pull_request_comments` — inline review comments
-- `mcp__github__get_pull_request_reviews` — review-level комментарии
+- `mcp__github__pull_request_read` — inline review comments
+- `mcp__github__pull_request_read` — review-level комментарии
 
 **ВАЖНО**: TFE и Atlantis всегда постят в issue comments (`/issues/{number}/comments`), а не в review comments. При использовании gh CLI — запрашивай именно этот endpoint. При использовании mcp__github__* — оба источника уже покрыты.
 
@@ -92,17 +92,17 @@ for c in data:
 
 ### Шаг 4: CI-статусы
 
-Вызови `mcp__github__get_pull_request_status` для получения check runs.
+Вызови `mcp__github__pull_request_read` для получения check runs.
 
 Отфильтруй checks, связанные с Terraform, atlantis, tfe, или github-actions.
 
 ### Шаг 5: GitHub Actions workflow runs (если Focus = github-actions или all)
 
-Попробуй вызвать `mcp__github__list_workflow_runs` с параметрами owner, repo, branch = head branch из Шага 1.
+Попробуй вызвать `gh run list --repo {owner}/{repo} --branch {head branch из Шага 1}` через Bash.
 
 Для failed или in-progress runs:
-- Вызови `mcp__github__list_jobs_for_workflow_run` для получения списка jobs
-- Для failed jobs — вызови `mcp__github__download_workflow_run_logs`, обрежь до последних 30 строк
+- Вызови `gh run view {run_id} --repo {owner}/{repo}` для получения списка jobs
+- Для failed jobs — вызови `gh run view {run_id} --repo {owner}/{repo} --log-failed`, обрежь до последних 30 строк
 
 Если инструменты недоступны при вызове — пропусти шаг, отметь в резюме "workflow runs: инструменты недоступны".
 
