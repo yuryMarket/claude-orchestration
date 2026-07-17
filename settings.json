@@ -681,5 +681,6 @@
   "enabledPlugins": {
     "security-guidance@claude-plugins-official": true
   },
-  "theme": "dark"
+  "theme": "dark",
+  "agentPushNotifEnabled": true
 }
