@@ -564,7 +564,8 @@
     "additionalDirectories": [
       "/Users/yury_shubianok/.claude",
       "/Users/yury_shubianok/.claude/skills",
-      "/Users/yury_shubianok/.claude/hooks"
+      "/Users/yury_shubianok/.claude/hooks",
+      "/Users/yury_shubianok/infra-operator-logs"
     ]
   },
   "model": "claude-fable-5[1m]",
