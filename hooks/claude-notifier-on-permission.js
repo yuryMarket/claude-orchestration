@@ -5,9 +5,11 @@ const { isMuted, isDisabled, readConfig } = require("./_lib/config");
 const { BUNDLED_FALLBACK } = require("./_lib/sounds");
 const { emitSound } = require("./_lib/emit");
 const { showNotification } = require("./_lib/notify");
+const { titleForCwd } = require("./_lib/title");
 const { writeSignal } = require("./_lib/signal");
 const { buildClickAction, GENERIC_ACTIVATE } = require("./_lib/click");
 const { shouldSuppressForThreshold } = require("./_lib/task-timer");
+const { agentLabel } = require("./_lib/agent");
 
 let raw = "";
 process.stdin.setEncoding("utf-8");
@@ -67,7 +69,8 @@ process.stdin.on("end", () => {
   if (level === "sound+popup" || level === "popup") {
     const tool = input.tool_name || "a tool";
     const cwd = (input && input.cwd) || process.cwd() || "";
-    showNotification(`Claude needs permission to use ${tool}.`, {
+    showNotification(`${agentLabel()} needs permission to use ${tool}.`, {
+      title: titleForCwd(cwd),
       preferTerminalNotifier: true,
       executeCmd: buildClickAction(cwd) || GENERIC_ACTIVATE,
     });

@@ -8,9 +8,11 @@ const { isMuted, isDisabled, readConfig } = require("./_lib/config");
 const { BUNDLED_FALLBACK } = require("./_lib/sounds");
 const { emitSound } = require("./_lib/emit");
 const { showNotification } = require("./_lib/notify");
+const { titleForCwd } = require("./_lib/title");
 const { extensionOwnsCwd } = require("./_lib/active");
 const { writeSignal } = require("./_lib/signal");
 const { shouldSuppressForThreshold } = require("./_lib/task-timer");
+const { agentLabel } = require("./_lib/agent");
 
 let raw = "";
 process.stdin.setEncoding("utf-8");
@@ -62,7 +64,7 @@ process.stdin.on("end", () => {
   }
 
   if (level === "sound+popup" || level === "popup") {
-    showNotification("Claude subagent finished.");
+    showNotification(`${agentLabel()} subagent finished.`, { title: titleForCwd(cwd) });
   }
 
   process.exit(0);
