@@ -31,7 +31,12 @@ allowed-tools: Read, Grep, Glob, Agent
      Проверь все 8 quality gates и выведи таблицу статусов.
      ```
 
-3. Покажи пользователю:
-   - Таблицу gates: gate | status | details
+3. Информационный gate «Worklog» (проверяется скиллом, не блокирует):
+   - Существует ли `docs/reports/<ticket>-worklog.md` (вне проекта — `~/docs/reports/<ticket>-worklog.md`)
+   - Есть → `✅ Present`; нет → `⬜ Pending — выполни /worklog <ticket>`
+   - Добавь строку в итоговую таблицу: `| Worklog | <статус> | docs/reports/<ticket>-worklog.md |`
+
+4. Покажи пользователю:
+   - Таблицу gates: gate | status | details (включая строку Worklog)
    - Первый непройденный gate
    - Рекомендуемую команду для следующего шага

@@ -42,6 +42,9 @@ allowed-tools: Read, Grep, Glob
 
    f. **CHANGELOG**: Содержит ticket ID?
 
+   g. **Worklog**: `docs/reports/<ticket>-worklog.md`
+      - Существует?
+
 3. Определение текущего этапа и вывод:
 
 ```markdown
@@ -57,6 +60,7 @@ allowed-tools: Read, Grep, Glob
 | 6. Review | — | ✅ OK / ⬜ Pending |
 | 7. QA | reports/qa/<ticket>.md | ✅ RELEASE_READY / ❌ Missing |
 | 8. Docs | CHANGELOG.md | ✅ Updated / ⬜ Pending |
+| 9. Worklog | docs/reports/<ticket>-worklog.md | ✅ Опубликован / ⬜ Pending |
 
 **Следующий шаг**: `/command <ticket>`
 ```
@@ -71,4 +75,6 @@ allowed-tools: Read, Grep, Glob
    - Все задачи завершены → `/review <ticket>`
    - Ревью OK → `/qa <ticket>`
    - QA RELEASE_READY → `/docs-update <ticket>`
-   - Docs updated → Готово! Можно мержить.
+   - Docs updated → `/validate <ticket>` (финальная проверка gates)
+   - Validate пройден → `/worklog <ticket>` — Этап 9: worklog закрытия задачи (черновик → СТОП → публикация комментарием в Jira)
+   - Worklog опубликован → Готово! Можно мержить.
