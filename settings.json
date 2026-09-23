@@ -4,6 +4,8 @@
       "WebSearch",
       "Edit(/Users/yury_shubianok/core-ai/**)",
       "Write(/Users/yury_shubianok/core-ai/**)",
+      "Edit(/Users/yury_shubianok/security-squad/**)",
+      "Write(/Users/yury_shubianok/security-squad/**)",
       "Read(~/.claude/**)",
       "Edit(~/.claude/**)",
       "Write(~/.claude/**)",
@@ -568,7 +570,7 @@
       "/Users/yury_shubianok/infra-operator-logs"
     ]
   },
-  "model": "fable[1m]",
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
