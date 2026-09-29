@@ -2,10 +2,10 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Edit(/Users/yury_shubianok/core-ai/**)",
-      "Write(/Users/yury_shubianok/core-ai/**)",
-      "Edit(/Users/yury_shubianok/security-squad/**)",
-      "Write(/Users/yury_shubianok/security-squad/**)",
+      "Edit(//Users/yury_shubianok/core-ai/**)",
+      "Write(//Users/yury_shubianok/core-ai/**)",
+      "Edit(//Users/yury_shubianok/security-squad/**)",
+      "Write(//Users/yury_shubianok/security-squad/**)",
       "Read(~/.claude/**)",
       "Edit(~/.claude/**)",
       "Write(~/.claude/**)",
