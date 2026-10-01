@@ -1,0 +1,33 @@
+{
+  "etag": "W/\"u4lPejgNGjQhHZ7Pl8GLL_AjJl8LYWa6SDpzdUGDLEY\"",
+  "rows": [
+    {
+      "name": "hd-pdlc-cowork",
+      "scope": "org",
+      "source": {
+        "source": "claudeai"
+      },
+      "id": "marketplace_01MK4hwjgyMn6gVR1iKMymvR",
+      "updated_at": "2026-06-29T19:35:09.571254Z"
+    },
+    {
+      "name": "one-thd/awesome-ai",
+      "scope": "org",
+      "source": {
+        "source": "claudeai"
+      },
+      "id": "marketplace_015ZdjcXtBKVmoSXxEznwBkX",
+      "updated_at": "2026-09-25T20:42:04.398773Z"
+    },
+    {
+      "name": "Organization library",
+      "scope": "org",
+      "source": {
+        "source": "claudeai"
+      },
+      "id": "marketplace_014ALoVjZAYx4z5QBrmZx3FU",
+      "updated_at": "2026-09-18T18:04:23.779094Z"
+    }
+  ],
+  "parserVersion": 2
+}

@@ -1,0 +1,52 @@
+{
+  "attribution": {
+    "commit": "🤖 Generated with Claude Code at The Home Depot\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+    "pr": "🤖 Generated with Claude Code at The Home Depot"
+  },
+  "availableModels": [
+    "sonnet",
+    "haiku",
+    "opus",
+    "opusplan"
+  ],
+  "companyAnnouncements": [
+    "Welcome! Support can be found in slack channel #claude-community"
+  ],
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_ENHANCED_TELEMETRY_BETA": "1",
+    "OTEL_EXPORTER_OTLP_HEADERS": "Authorization=Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkNsYXVkZSBTaGFubm9uIiwiaWF0IjoxNzc4MzUwODAyfQ.aqoL5Qbgb9EtxOyJHlNEUl7jqq_HZDOKTYiIIwASxJjZ1bGuIkgDzJvlGhd0HDXEvJyHNFxNFQlyP7d3ZSyNwW3MIA3ahWu9HOMttpvko2VZ3uOIVO7zeLtSttRpm78ImamaG4TBbYZ-ESFYQUq8UzuELH1G1Fp8ZeeNn-PydVKaf3ssxq5bBQtpZU05-Hoa9JLnONCx1Ak0BKU2qaZa8WxZQcopd0XmOL2Hv4ZoyokfxacVhPypRsGvqIN20QIo-fEdsGroNBJxhUAuWMpZGTccGxWnL670JUa8ekFYK_oFIsULEI9Eq79MPkQ9R7PEIkGDelvse5z-Ps0yhenrTqk4QFriPhbiNO5ctgdSm0cIkS56S_rVFm0vwMHkvb6oiuUueMrD5S7Hh-5UP6z7Sa-b0mmSk74eExITkYVCMK6n__yzNdTcwwILxQl9B9mqd4fni8D4s_nBo-ktd6I19l0SFckkMa6_N-pa83nrckMBuhhvQ0dnjaqgGS1cL0-AQQZXL2zxUFvfKtWHwwe5Oafc1TbA3LX6-dqD4U-A1dZog7mQXIcUCiRsCNnKuXvst-D1CIE55Frfn0Gw2aatMfBh85r2p0ViHhwcfsfIf1rDQDbGgtfkfWkhyTAjn6gBxlH4YgBlKhbuTpj5nfW4zaViPRprxCzbLKiTwe49mLQ",
+    "OTEL_EXPORTER_OTLP_LOGS_ENDPOINT": "https://otel-collector.np-te-tinyhome-utility.space.homedepot.com:443/v1/logs",
+    "OTEL_EXPORTER_OTLP_LOGS_PROTOCOL": "http/json",
+    "OTEL_EXPORTER_OTLP_METRICS_ENDPOINT": "https://otel-collector.np-te-tinyhome-utility.space.homedepot.com:443/v1/metrics",
+    "OTEL_EXPORTER_OTLP_METRICS_PROTOCOL": "http/json",
+    "OTEL_LOGS_EXPORTER": "otlp",
+    "OTEL_LOG_TOOL_DETAILS": "1",
+    "OTEL_METRICS_EXPORTER": "otlp",
+    "OTEL_METRICS_INCLUDE_REPOSITORY": "true",
+    "OTEL_METRICS_INCLUDE_VERSION": "true",
+    "OTEL_TRACES_EXPORTER": "otlp"
+  },
+  "extraKnownMarketplaces": {
+    "hd-pdlc-marketplace": {
+      "source": {
+        "ref": "main",
+        "repo": "one-thd/awesome-ai",
+        "source": "github"
+      }
+    }
+  },
+  "forceLoginMethod": "claudeai",
+  "minimumVersion": "2.1.269",
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(**/*.key)",
+      "Read(**/credentials*.json)",
+      "Read(~/.ssh/id_*)",
+      "Read(~/.kube/config)",
+      "Read(**/*private*.pem)"
+    ]
+  }
+}

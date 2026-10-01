@@ -10,6 +10,8 @@
 | `context7` | `deep-researcher` | Глубокое исследование: сравнение, миграция |
 | `atlassian` (Confluence) | `quick-lookup` | Конкретная страница/процесс/runbook |
 | `atlassian` (Confluence) | `deep-researcher` | Анализ нескольких страниц |
+| `claude.ai Slack` | `quick-lookup` | Точечный поиск: обсуждалась ли ошибка/проблема, найти тред |
+| `claude.ai Slack` | `deep-researcher` | Анализ обсуждений по теме в нескольких каналах |
 | `mcp__gcp__run_gcloud_command` | `infra-operator` | Все GCP CLI: delete, describe, list, IAM |
 
 ## Выбор субагента
@@ -18,11 +20,20 @@
 - **deep-researcher** — сравнение/анализ нескольких источников (sonnet)
 - **infra-operator** — любые GCP CLI операции (никогда не вызывать `mcp__gcp__*` из оркестратора)
 
+## Slack как источник информации
+
+- При поиске ответов на вопросы и решений конкретных проблем Slack проверяется **обязательно**, наряду с Confluence, Jira и GitHub (через `quick-lookup` / `deep-researcher`)
+- Приоритетные каналы: `#core_ai_re_support` (`C08G282NCBS`), `#claude-community`; затем общий поиск
+- Находки из Slack — со ссылкой на тред и датой; надёжность средняя (обсуждение, не официальная документация)
+- Slack только для чтения: сообщения в Slack не отправлять, ответы пишет пользователь
+
 ## Шаблоны вызова
 
 **quick-lookup (документация)**: `"Найди в документации <lib> синтаксис для <что>. Контекст: <зачем>."`
 
 **quick-lookup (Confluence)**: `"Найди в Confluence страницу про <тема>. Контекст: <зачем>."`
+
+**quick-lookup (Slack)**: `"Найди в Slack обсуждения <ошибка/тема>. Контекст: <зачем>."`
 
 **deep-researcher**: `"Исследуй <тема>. Вопросы: <список>. Сохрани отчёт в: docs/research/<name>.md"`
 
