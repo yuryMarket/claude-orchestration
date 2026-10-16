@@ -685,5 +685,10 @@
     "security-guidance@claude-plugins-official": true
   },
   "theme": "dark",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccusage@latest statusline",
+    "padding": 0
+  }
 }

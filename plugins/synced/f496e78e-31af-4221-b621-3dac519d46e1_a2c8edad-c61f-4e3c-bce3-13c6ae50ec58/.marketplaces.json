@@ -1,5 +1,5 @@
 {
-  "etag": "W/\"u4lPejgNGjQhHZ7Pl8GLL_AjJl8LYWa6SDpzdUGDLEY\"",
+  "etag": "W/\"1KkOJ8TlJ-UEz02p0urtYSlfL2q9GmUm5aJiICinH0w\"",
   "rows": [
     {
       "name": "hd-pdlc-cowork",
@@ -17,7 +17,7 @@
         "source": "claudeai"
       },
       "id": "marketplace_015ZdjcXtBKVmoSXxEznwBkX",
-      "updated_at": "2026-09-25T20:42:04.398773Z"
+      "updated_at": "2026-10-15T16:45:37.617754Z"
     },
     {
       "name": "Organization library",
@@ -27,7 +27,17 @@
       },
       "id": "marketplace_014ALoVjZAYx4z5QBrmZx3FU",
       "updated_at": "2026-09-18T18:04:23.779094Z"
+    },
+    {
+      "name": "anthropic-plugin-directory",
+      "display_name": "Anthropic Directory",
+      "scope": "default",
+      "source": {
+        "source": "claudeai"
+      },
+      "id": "marketplace_01VNB7JgJyYTuJiDfXSABKm3",
+      "updated_at": "2026-10-16T09:01:54.770633Z"
     }
   ],
-  "parserVersion": 2
+  "parserVersion": 1002
 }
