@@ -24,8 +24,7 @@
     "OTEL_LOG_TOOL_DETAILS": "1",
     "OTEL_METRICS_EXPORTER": "otlp",
     "OTEL_METRICS_INCLUDE_REPOSITORY": "true",
-    "OTEL_METRICS_INCLUDE_VERSION": "true",
-    "OTEL_TRACES_EXPORTER": "otlp"
+    "OTEL_METRICS_INCLUDE_VERSION": "true"
   },
   "extraKnownMarketplaces": {
     "hd-pdlc-marketplace": {
