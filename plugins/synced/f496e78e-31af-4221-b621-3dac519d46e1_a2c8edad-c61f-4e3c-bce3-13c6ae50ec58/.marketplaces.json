@@ -1,5 +1,5 @@
 {
-  "etag": "W/\"L7GU38HIuPyT-NiRKfOQJq-FBnylWWxOnmQ0i6uX15I\"",
+  "etag": "W/\"HY0CdZByg39YgVOdtnbUR6o1sLO5VBVX2dGbzOW3ks4\"",
   "rows": [
     {
       "name": "hd-pdlc-cowork",
@@ -36,7 +36,7 @@
         "source": "claudeai"
       },
       "id": "marketplace_01VNB7JgJyYTuJiDfXSABKm3",
-      "updated_at": "2026-10-20T07:41:57.852658Z"
+      "updated_at": "2026-10-21T07:36:34.394141Z"
     }
   ],
   "parserVersion": 1002
