@@ -244,3 +244,13 @@ stats-cache.json
 /plugins/.last_inuse_sweep
 /plugins/cache/
 /plugins/marketplaces/
+# Org-синхронизация claude.ai: managed settings, policy limits, synced skills/plugins
+# (перезаписываются Claude Code при каждом запуске → ломали checkout main в core-ai-update)
+/remote-settings*.json
+/remote-settings.json.synced-at
+/policy-limits*.json
+/plugins/synced/
+/skills/synced/
+/security/log.txt.*
+/security/.agentic_unavailable_notice_*
+/state/
