@@ -10,6 +10,7 @@
 | `context7` | `deep-researcher` | Глубокое исследование: сравнение, миграция |
 | `atlassian` (Confluence) | `quick-lookup` | Конкретная страница/процесс/runbook |
 | `atlassian` (Confluence) | `deep-researcher` | Анализ нескольких страниц |
+| `claude.ai Atlassian Rovo` | `general-purpose` | Запись описания/заголовка Jira-тикета (`editJiraIssue`, markdown) и его обратное чтение (`getJiraIssue`); комментарии — через `atlassian` (`jira_add_comment` / `jira_edit_comment`) |
 | `claude.ai Slack` | `quick-lookup` | Точечный поиск: обсуждалась ли ошибка/проблема, найти тред |
 | `claude.ai Slack` | `deep-researcher` | Анализ обсуждений по теме в нескольких каналах |
 | `mcp__gcp__run_gcloud_command` | `infra-operator` | Все GCP CLI: delete, describe, list, IAM |
@@ -19,6 +20,7 @@
 - **quick-lookup** — один факт/snippet (haiku, быстро)
 - **deep-researcher** — сравнение/анализ нескольких источников (sonnet)
 - **infra-operator** — любые GCP CLI операции (никогда не вызывать `mcp__gcp__*` из оркестратора)
+- **general-purpose** — записи в Jira (описание через Rovo, комментарии и статусы через `atlassian`); причины выбора Rovo для описания — `ticket-description.md`
 
 ## Slack как источник информации
 
