@@ -38,7 +38,7 @@
 | 6 | `reviewer` | `Ticket: X` | Нет BLOCKING в `reports/review/X.md` | Авто-фикс BLOCKING (макс 3 цикла). **СТОП** |
 | 7 | `qa-engineer` | `Ticket: X` | `reports/qa/X.md` → `Verdict: RELEASE_READY` | Авто-фикс NEEDS_FIX (макс 2 цикла). **СТОП** |
 | 8 | `tech-writer` | `Ticket: X` | `CHANGELOG.md` содержит ticket ID | Покажи обновлённые файлы. **СТОП** |
-| 9 | _скилл `/worklog X`_ | `Ticket: X` | `docs/reports/X-worklog.md` существует, комментарий опубликован в Jira, тикет в **Ready for Demo** | Покажи черновик worklog. **СТОП** → после «ок» публикация в Jira → перевод тикета в Ready for Demo (никогда в Done; правило `rules/ticket-worklog.md`) |
+| 9 | _скилл `/worklog X`_ | `Ticket: X` | `docs/reports/X-worklog.md` существует, описание тикета по шаблону, worklog + последний комментарий-резюме опубликованы в Jira, тикет в **Ready for Demo** | Покажи черновики (описание, worklog, резюме). **СТОП** → после «ок» публикация в Jira → перевод тикета в Ready for Demo (никогда в Done; правила `rules/ticket-worklog.md`, `rules/ticket-description.md`) |
 
 ### Груминг тикета (после Этапа 3, обязательно)
 
@@ -70,7 +70,7 @@
 
 После Этапа 8: вызови `validator`, покажи итоговую таблицу, предложи `/commit`, PR или правки.
 
-После merge/отправки ответа — **Этап 9 (обязательно)**: `/worklog <ticket>` по правилу `~/.claude/rules/ticket-worklog.md` — история выполнения от имени пользователя (одна секция, bullet-шаги, каждый с `Resources and result:` + ссылки). Черновик → **СТОП** → после подтверждения комментарий в Jira → перевод тикета в статус **Ready for Demo** через general-purpose агента. **Никогда не переводить в Done** — в Done переводит пользователь сам после демо. Без worklog и статуса Ready for Demo тикет не считается закрытым. То же правило действует и для прямой сессии (см. `rules/routing.md`, «Закрытие задачи»).
+После merge/отправки ответа — **Этап 9 (обязательно)**: `/worklog <ticket>` по правилу `~/.claude/rules/ticket-worklog.md` — история выполнения от имени пользователя (одна секция, bullet-шаги, каждый с `Resources and result:` + ссылки), простой английский B1 (макс. B2). Перед worklog описание тикета приводится к шаблону As a / We want / So that / Description / Given-When-Then (`rules/ticket-description.md`); после worklog — отдельный, самый последний комментарий `Summary of work done:` нумерованным списком конкретных действий (PR, сборки, деплои, проверки). Черновики → **СТОП** → после подтверждения описание и комментарии в Jira → перевод тикета в статус **Ready for Demo** через general-purpose агента. **Никогда не переводить в Done** — в Done переводит пользователь сам после демо. Без worklog и статуса Ready for Demo тикет не считается закрытым. То же правило действует и для прямой сессии (см. `rules/routing.md`, «Закрытие задачи»).
 
 ## Таблица прогресса
 
@@ -88,7 +88,7 @@
 | 6 | Ревью        | ✅/❌  | reports/review/<ticket>.md |
 | 7 | QA           | ✅/❌  | reports/qa/<ticket>.md     |
 | 8 | Документация | ✅/❌  | CHANGELOG.md               |
-| 9 | Worklog      | ✅/❌  | docs/reports/<ticket>-worklog.md + Jira + Ready for Demo |
+| 9 | Worklog      | ✅/❌  | docs/reports/<ticket>-worklog.md + описание + резюме-коммент в Jira + Ready for Demo |
 Следующий этап: N. <название>
 ```
 
