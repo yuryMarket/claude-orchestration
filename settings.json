@@ -684,6 +684,15 @@
   "enabledPlugins": {
     "security-guidance@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "hd-pdlc-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "one-thd/awesome-ai",
+        "ref": "main"
+      }
+    }
+  },
   "theme": "dark",
   "agentPushNotifEnabled": true,
   "statusLine": {
